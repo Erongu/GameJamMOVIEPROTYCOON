@@ -1,0 +1,51 @@
+body{
+    color: white;
+    font-size: 22px;
+    font-family: 'bn';
+    user-select: none;
+    background: black url("/images/background_login.jpg") no-repeat;
+    background-size: cover;
+}
+
+#grid{
+	z-index: 200;
+}
+
+#hover {
+    z-index: 600;
+}
+
+#infos {
+	z-index: 0;
+}
+
+#map, #grid, #hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#moving, #ground, #ground canvas, #decors, #decors canvas, #limits, #limits svg, #infos {
+    position: absolute;
+}
+
+#limits polyline {
+    fill: rgba(0,0,0,0);
+    stroke: red;
+    stroke-width: 1px;
+}
+
+#grid polygon {
+    fill: rgba(0,0,0,0);
+    stroke: white;
+    stroke-width: 0.2px;
+}
+
+#hover polygon {
+    fill: rgba(0,0,0,0);
+}
+
+#hover polygon:hover, #hover polygon.hovered
+{
+	fill:rgba(255, 255, 255, 0.2);
+}

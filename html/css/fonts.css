@@ -1,0 +1,20 @@
+@font-face{
+	font-family:'bn';
+	font-style:normal;
+	font-weight:normal;
+	src:url('../fonts/bebas.ttf') format('truetype'), url('../fonts/bebas.svg') format('opentype'), url('../fonts/bebas.eot') format('opentype');
+}
+
+@font-face{  
+	font-family:'br';
+	font-style:normal;
+	font-weight:normal;
+	src:url('../fonts/regul.ttf') format('truetype'), url('../fonts/regul.svg') format('opentype'), url('../fonts/regul.eot') format('opentype'), url('../fonts/regul.woff') format('woff');
+}
+
+@font-face{  
+	font-family:'bb';
+	font-style:normal;
+	font-weight:normal;
+	src:url('../fonts/bold.ttf') format('truetype'), url('../fonts/bold.svg') format('opentype'), url('../fonts/bold.eot') format('opentype'), url('../fonts/bold.woff') format('woff');
+}
