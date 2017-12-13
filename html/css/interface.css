@@ -10,7 +10,7 @@
     top: 0px;
     right: 200px;
     width: 500px;
-    height: 300px;
+    height: 400px;
     display: block;
 }
 
@@ -39,6 +39,14 @@
 
 #message_popup {
     user-select: text;
+}
+
+#new_game_popup {
+    top: 0px;
+    right: 200px;
+    width: 500px;
+    height: 450px;
+    display: none;
 }
 
 #login_popup .popup_content {
@@ -74,6 +82,21 @@
 }
 
 .menu-btn {
+    height: 36px;
+    line-height: 36px;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0);
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+}
+
+.menu-input {
     height: 36px;
     line-height: 36px;
     font-size: 24px;
