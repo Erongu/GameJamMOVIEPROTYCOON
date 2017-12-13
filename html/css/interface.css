@@ -140,3 +140,8 @@
 #footer-navigation{
     display: none;
 }
+
+mark{
+    background-color: white;
+    margin-left:11px;
+}
