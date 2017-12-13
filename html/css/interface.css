@@ -1,0 +1,93 @@
+#logs_interface {
+    top: 0px;
+    right: 600px;
+    width: 400px;
+    height: 600px;
+    display: block;
+}
+
+#login_popup {
+    top: 0px;
+    right: 200px;
+    width: 500px;
+    height: 300px;
+    display: block;
+}
+
+#games_popup {
+    top: 0px;
+    right: 200px;
+    height: 600px;
+    display: none;
+}
+
+#song_popup {
+    top: 0px;
+    right: 200px;
+    height: 80px;
+    display: block;
+    width: 260px
+}
+
+#menu_popup {
+    top: 0px;
+    right: 200px;
+    width: 500px;
+    height: 300px;
+    display: none;
+}
+
+#message_popup {
+    user-select: text;
+}
+
+#login_popup .popup_content {
+    text-align: center;
+    padding: 1em;
+    color: #fff;
+}
+
+.interface {
+    position: absolute !important;
+    top: 50%;
+    left: 50%;
+    min-width: 200px;
+    min-height: 200px;
+    background-color: #343434;
+    padding-top: 34px;
+    box-shadow: 0px 0px 20px -1px black;
+    display: none;
+    z-index: 1000;
+}
+
+.submit {
+    height: 36px;
+    line-height: 36px;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    background-color: #0070C0;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.submit .fa {
+    transition: all 0.2s;
+}
+
+.submit.ko {
+    background-color: #982B2B;
+}
+
+.submit:hover {
+    box-shadow: 0px 0px 0px 1000px rgba(255, 255, 255, 0.2) inset;
+}
+
+.submit:hover .fa {
+    transform: rotate(-20deg);
+}
+
+.submit:active {
+    box-shadow: 0px 0px 0px 1000px rgba(0, 0, 0, 0.2) inset;
+}
