@@ -1,5 +1,6 @@
 $(function () {
     $("#connect_login").on('click', function () {
+        $("#newspaper_popup").css("display", "block")
         $("#menu_popup").css("display", "block");
         $("#menu_popup").addClass("fadeInDown animated");
 

@@ -29,6 +29,15 @@
     width: 260px
 }
 
+#newspaper_popup {
+    top: 0px;
+    right: 200px;
+    height: 80px;
+    display: block;
+    width: 260px
+}
+
+
 #menu_popup {
     top: 0px;
     right: 200px;
@@ -142,6 +151,13 @@
 }
 
 .control_vol{
+    background-color: white;
+    margin-left: 6px;
+    padding: 10px 3px 5px 2px;
+    color: #000;
+}
+
+.menu_newspaper{
     background-color: white;
     margin-left: 6px;
     padding: 10px 3px 5px 2px;
