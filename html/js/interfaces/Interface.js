@@ -15,12 +15,25 @@ function Load() {
     }).on('move', function () {
         $(this).css('margin', 0);
     }).each(function () {
-        $(this).css({
-            'top': ($(window).height() - $(this).outerHeight()) / 2,
-            'left': ($(window).width() - $(this).outerWidth() - 50),
-            'margin-top': '0px',
-            'margin-left': '0px'
-        });
+
+        if (!$(this).hasClass("ignore")) {
+            $(this).css({
+                'top': ($(window).height() - $(this).outerHeight()) / 2,
+                'left': ($(window).width() - $(this).outerWidth() - 50),
+                'margin-top': '0px',
+                'margin-left': '0px'
+            });
+        }else{
+            let top = $(this).css("top");
+            let left = $(this).css("left");
+
+            $(this).css({
+                'top': top,
+                'left': left,
+                'margin-top': '0px',
+                'margin-left': '0px'
+            });
+        }
 
         if ($(this).hasClass("middle")) {
             $(this).css({
