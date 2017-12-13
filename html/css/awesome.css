@@ -199,7 +199,8 @@ a {
     height: 34px;
     padding-left: 10px;
     color: #555;
-    background-color: white;
+    background-image:url(../images/header_popup.jpg);
+    background-repeat: repeat-x;
     cursor: grab;
     line-height: 34px;
     font-size: 24px;
