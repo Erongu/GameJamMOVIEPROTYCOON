@@ -60,6 +60,7 @@ function LoadGame() {
 
     IsGameStarted = true;
 
+    $("body").css("background", "rgb(0, 0, 0)");
     Map.createGrid();
 }
 
@@ -68,7 +69,7 @@ function SaveGame() {
 }
 
 function adjust() {
-    $('#map').add(Map.grid).attr({'width': $(window).width() * ZOOM, 'height': $(window).height()  * ZOOM});
+    $('#map').add(Map.grid).attr({'width': $(window).width() * 1, 'height': $(window).height()  * 1});
 
     var coef = {x: ($(window).width() / lastWindowWidth), y: ($(window).height() / lastWindowHeight)};
     $('.needResize')
