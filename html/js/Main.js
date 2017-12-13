@@ -27,6 +27,12 @@ $(function () {
             SaveGame();
         }
     }, 10000);
+
+    $("#hover").css("display", "none");
+    $("#grid").css("display", "none");
+
+    Map.createGrid();
+    Map.initCellPos();
 });
 
 function LoadGame() {
@@ -60,7 +66,11 @@ function LoadGame() {
 
     IsGameStarted = true;
 
-    Map.createGrid();
+    $("body").css("background", "rgb(0, 0, 0)");
+
+    Map.showGrid();
+    Map.createMap();
+    Map.loadMap();
 }
 
 function SaveGame() {
@@ -68,7 +78,7 @@ function SaveGame() {
 }
 
 function adjust() {
-    $('#map').add(Map.grid).attr({'width': $(window).width() * ZOOM, 'height': $(window).height()  * ZOOM});
+    $('#map').add(Map.grid).attr({'width': $(window).width() * 1, 'height': $(window).height()  * 1});
 
     var coef = {x: ($(window).width() / lastWindowWidth), y: ($(window).height() / lastWindowHeight)};
     $('.needResize')

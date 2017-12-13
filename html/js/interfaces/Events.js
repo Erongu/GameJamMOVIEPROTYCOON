@@ -51,4 +51,10 @@ $(function () {
     $("#continue_game").on('click', function () {
         LoadGame();
     });
+
+    $("#grid").on('mousedown', 'polygon', function (event) {
+        let mouse = 'mouse' + event.which;
+        MouseManager['down'][mouse](this, event.clientX, event.clientY, event);
+    });
+
 })
