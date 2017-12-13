@@ -248,12 +248,12 @@ a {
 }
 
 .itf-reduce:hover {
-    text-shadow: 0px 1px 10px #000;
+    text-shadow: 0px 1px 10px #fff;
     color: black;
 }
 
 .itf-reduce {
-    text-shadow: 0px 1px 10px #fff;
+    text-shadow: 0px 1px 10px #000;
     color: white;
 }
 
