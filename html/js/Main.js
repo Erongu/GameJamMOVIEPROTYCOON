@@ -67,7 +67,7 @@ function LoadGame() {
     IsGameStarted = true;
 
     $("body").css("background", "rgb(0, 0, 0)");
-    
+
     Map.showGrid();
 }
 

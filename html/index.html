@@ -22,6 +22,7 @@
     <script src="js/GameObject.js"></script>
 
     <script src="js/game/Map.js"></script>
+    <script src="js/game/MouseManager.js"></script>
 
     <script src="js/interfaces/Interface.js"></script>
     <script src="js/interfaces/Events.js"></script>
@@ -44,17 +45,6 @@
 <body>
 <section id="infos">
     <!--p id="cellId">CellId: 0</p>-->
-</section>
-
-<section id="map">
-    <div id="moving" class="fullscreen">
-        <div id="ground"></div>
-        <div id="limits"></div>
-        <div id="decors"></div>
-    </div>
-    <svg id="grid" class="fullscreen"></svg>
-    <img id="cursor" src="" />
-    <svg id="hover" class="fullscreen"></svg>
 </section>
 
 <section id="logs_interface" class="interface needResize fadeInRight animated">
@@ -149,6 +139,14 @@
     </content>
 </section>
 
+<section id="map" class="fullscreen" >
+    <div id="moving">
+        <div id="ground" class="fullscreen"></div>
+        <div id="decors"  class="fullscreen"></div>
+    </div>
+    <svg id="grid" class="fullscreen"></svg>
+</section>
+
 <footer id="footer-navigation" class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container-fluid container-footer">
         <div class="navbar-collapse collapse">
@@ -167,7 +165,7 @@
                     <span><strong>Company</strong>: <b id="info_companyName">Guest_666</b></span>
                 </li>
                 <li>
-                    <span><strong>Monney</strong>: <b id="info_money">0$</b></span>
+                    <span><strong>Money</strong>: <b id="info_money">0$</b></span>
                 </li>
                 <li>
                     <span><strong>Date</strong>: <b id="info_date">20/02/1928 13:00</b></span>
