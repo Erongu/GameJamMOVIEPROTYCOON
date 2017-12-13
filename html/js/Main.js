@@ -27,6 +27,12 @@ $(function () {
             SaveGame();
         }
     }, 10000);
+
+    $("#hover").css("display", "none");
+    $("#grid").css("display", "none");
+
+    Map.createGrid();
+    Map.initCellPos();
 });
 
 function LoadGame() {
@@ -61,7 +67,8 @@ function LoadGame() {
     IsGameStarted = true;
 
     $("body").css("background", "rgb(0, 0, 0)");
-    Map.createGrid();
+    
+    Map.showGrid();
 }
 
 function SaveGame() {
