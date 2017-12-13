@@ -7,6 +7,8 @@ var lastWindowWidth = 0,
 
 var IsGameStarted = false;
 
+var main_theme;
+
 function Load() {
     adjust();
   //  playSound("main_theme");
@@ -19,7 +21,7 @@ $(function () {
     });
 
     loadSound();
-    
+
     setInterval(function(){
         if(IsGameStarted) {
             SaveGame();
@@ -124,5 +126,5 @@ function loadSound () {
 }
 
 function playSound(event) {
-    var instance = createjs.Sound.play("main_theme");
+    main_theme = createjs.Sound.play("main_theme");
 }
