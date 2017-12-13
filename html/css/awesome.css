@@ -212,10 +212,6 @@ a {
     cursor: grabbing;
 }
 
-.itf-head.active {
-    cursor: grabbing;
-}
-
 .itf-head.active:hover {
     cursor: grabbing;
 }
@@ -248,11 +244,16 @@ a {
 }
 
 .itf-close:hover {
-    color: white;
+    color: black;
 }
 
 .itf-reduce:hover {
     text-shadow: 0px 1px 10px #000;
+    color: black;
+}
+
+.itf-reduce {
+    text-shadow: 0px 1px 10px #fff;
     color: white;
 }
 
