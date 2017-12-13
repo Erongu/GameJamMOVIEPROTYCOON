@@ -127,11 +127,18 @@ function loadSound () {
 
 function playSound(event) {
     main_theme = createjs.Sound.play("main_theme");
-    main_theme.volume = 0.5;
+    let volume = Cookies.get("music_volume");
+    if(volume != null){
+        main_theme.volume = volume;
+        $("#music_volume").val(volume);
+    }else {
+        main_theme.volume = 0.5;
+    }
 }
 
 function volumeChange() {
     let volume = $("#music_volume").val();
     main_theme.volume = volume;
     console.log("Change volume to " + volume);
+    Cookies.set("music_volume", main_theme.volume);
 }
