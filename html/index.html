@@ -58,30 +58,32 @@
     <content class="bloc p6 itf-text">
         <div class="popup_content">
             <div id="LogInDialog" class="Active">
-                <h3>Sélectionner un service pour vous connecter</h3>
+                <h3>Connect with</h3>
                 <ul id="LogInOptions">
                     <li>
                         <a href="/auth/steam"><img src="/images/loginIcons/steam.png" alt="Steam"
-                                                   title="Connexion avec Steam"></a>
+                                                   title="Connect with Steam"></a>
                     </li>
                     <li>
                         <a href="/auth/twitch"><img src="/images/loginIcons/twitch.png" alt="Twitch"
-                                                    title="Connexion avec Twitch"></a>
+                                                    title="Connect with Twitch"></a>
                     </li>
                     <li>
                         <a href="/auth/twitter"><img src="/images/loginIcons/twitter.png" alt="Twitter"
-                                                     title="Connexion avec Twitter"></a>
+                                                     title="Connect with Twitter"></a>
                     </li>
                     <li>
                         <a href="/auth/facebook"><img src="/images/loginIcons/facebook.png" alt="Facebook"
-                                                      title="Connexion avec Facebook"></a>
+                                                      title="Connect with Facebook"></a>
                     </li>
                     <li>
                         <a href="/auth/google"><img src="/images/loginIcons/google.png" alt="Google+"
-                                                    title="Connexion avec Google+"></a>
+                                                    title="Connect with Google+"></a>
                     </li>
                 </ul>
-                <input type="submit" value="Jouer en tant qu'invité" id="connect_login" class="bloc submit"></input>
+                <h1><b>OR</b></h1>
+                <br>
+                <input type="submit" value="Play as Guest" id="connect_login" class="bloc submit"></input>
             </div>
         </div>
     </content>
@@ -92,9 +94,19 @@
     </header>
     <content class="bloc p6 itf-text">
         <div class="popup_content">
-            <input type="submit" value="Nouvelle partie" id="start_new_game" class="bloc submit menu-btn"></input>
-            <input type="submit" value="Continuer" id="continue_game" class="bloc submit menu-btn"></input>
+            <input type="submit" value="New game" id="start_new_game" class="bloc submit menu-btn"></input>
+            <input type="submit" value="Continue" id="continue_game" class="bloc submit menu-btn" disabled></input>
             <input type="submit" value="Stats" id="stats_game" class="bloc submit menu-btn"></input>
+        </div>
+    </content>
+</section>
+
+<section id="new_game_popup" class="interface middle">
+    <header class="bloc itf-head oh">
+    </header>
+    <content class="bloc p6 itf-text">
+        <div class="popup_content">
+            <input type="submit" value="Créer" id="create_game" class="bloc submit menu-btn"></input>
         </div>
     </content>
 </section>

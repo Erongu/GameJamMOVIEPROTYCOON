@@ -96,14 +96,24 @@
     background-color: #982B2B;
 }
 
-.submit:hover {
+.submit:hover:enabled {
     box-shadow: 0px 0px 0px 1000px rgba(255, 255, 255, 0.2) inset;
 }
 
-.submit:hover .fa {
+.submit:hover:enabled .fa {
     transform: rotate(-20deg);
 }
 
-.submit:active {
+.submit:active:enabled {
     box-shadow: 0px 0px 0px 1000px rgba(0, 0, 0, 0.2) inset;
+}
+
+.menu-btn:disabled{
+    background-color: rgba(255, 255, 255, 0.16);
+    cursor: not-allowed;
+}
+
+
+#footer-navigation{
+    display: none;
 }
