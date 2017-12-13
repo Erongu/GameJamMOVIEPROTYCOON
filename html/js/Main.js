@@ -40,7 +40,7 @@ function LoadGame() {
             });
         }
     });
-
+    createjs.Sound.play("whoosh");
     $("#footer-navigation").css("display", "block");
     $("#footer-navigation").addClass("fadeInUp animated");
 
@@ -119,15 +119,17 @@ Date.prototype.addDays = function(days) {
 }
 
 function loadSound () {
-    createjs.Sound.alternateExtensions = ["mp3"];
+    createjs.Sound.alternateExtensions = ["mp3", "wav"];
     createjs.Sound.registerSound("music/main_theme.mp3", "main_theme");
     createjs.Sound.on("fileload", this.playSound, this);
 
+    createjs.Sound.registerSound("music/effects/whoosh.mp3", "whoosh");
 }
 
 function playSound(event) {
-    main_theme = createjs.Sound.play("main_theme");
+    main_theme = createjs.Sound.play("main_theme", {loop:-1});
     let volume = Cookies.get("music_volume");
+
     if(volume != null){
         main_theme.volume = volume;
         $("#music_volume").val(volume);
