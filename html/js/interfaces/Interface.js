@@ -47,7 +47,7 @@ function Load() {
             $(this).css({'left': '10px', 'margin-top': '0px', 'margin-left': '0px'});
         }
         if ($(this).hasClass("bottom")) {
-            $(this).css({'top': $(window).height() - $(this).outerHeight(), 'margin-top': '0px', 'margin-left': '0px'});
+            $(this).css({'top': $(window).height() - $(this).outerHeight() - 50, 'margin-top': '0px', 'margin-left': '0px'});
         }
 
         $(this).toggleClass('minus');

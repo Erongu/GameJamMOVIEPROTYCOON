@@ -121,7 +121,7 @@
 <section id="new_game_popup" class="interface middle">
     <header class="bloc itf-head oh">
     </header>
-    <content class="bloc p6 itf-text">
+    <content class="bloc h p6 itf-content needScroll">
         <div class="popup_content">
             <h1>Player name:</h1>
                 <input type="input" placeholder="Jean-Marc" id="new_game_player_name" class="bloc submit menu-btn">
@@ -137,9 +137,11 @@
 
 <section id="song_popup" class="interface left bottom music">
     <header class="bloc itf-head oh">
+        <mark> Control Volume</mark>
+        <div class="itf-btn itf-reduce"><i class="fa fa-minus"></i><i class="fa fa-plus"></i></div>
     </header>
-    <content class="bloc p6 itf-text">
-        <div class="popup_content" id="songs">
+    <content class="bloc h p6 itf-content needScroll">
+        <div class="bloc p6 log" style="top: 5px" id="soundControl">
             <h1>Music volume: </h1>
             <input type="range" value="0.5" min="0" max="1" step="any" onchange="volumeChange()" id="music_volume" class="bloc submit menu-btn">
             <h1>Sound Effects volume: </h1>
