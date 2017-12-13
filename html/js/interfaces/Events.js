@@ -6,6 +6,12 @@ $(function () {
         $("#login_popup").addClass("fadeOutDown animated").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
             $(this).css("display", "none");
         });
+
+        let game = Cookies.get("game");
+
+        if(game == null || game.lose){
+            $("#continue_game").prop("disabled", true);
+        }
     });
 
     $("#start_new_game").on('click', function () {
@@ -15,6 +21,5 @@ $(function () {
 
         $("#new_game_popup").css("display", "block");
         $("#new_game_popup").addClass("fadeInDown animated");
-
     });
 })

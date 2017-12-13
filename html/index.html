@@ -19,10 +19,12 @@
 
     <script src="js/Main.js"></script>
 
-    <script src="js/CurrentUser.js"></script>
+    <script src="js/GameObject.js"></script>
 
     <script src="js/interfaces/Interface.js"></script>
     <script src="js/interfaces/Events.js"></script>
+
+    <script src="js/jquery/js.cookie.min.js"></script>
 
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/ui-darkness/jquery-ui.css"/>
@@ -39,6 +41,20 @@
 <body>
 <section id="infos">
     <!--p id="cellId">CellId: 0</p>-->
+</section>
+
+<section id="map">
+    <div id="moving">
+        <div id="ground"></div>
+        <div id="limits"></div>
+        <div id="decors"></div>
+    </div>
+    <svg id="grid"></svg>
+    <svg id="selector" width="500" height="500">
+        <polygon points="" />
+    </svg>
+    <img id="cursor" src="" />
+    <svg id="hover"></svg>
 </section>
 
 <section id="logs_interface" class="interface needResize fadeInRight animated">
@@ -95,7 +111,7 @@
     <content class="bloc p6 itf-text">
         <div class="popup_content">
             <input type="submit" value="New game" id="start_new_game" class="bloc submit menu-btn"></input>
-            <input type="submit" value="Continue" id="continue_game" class="bloc submit menu-btn" disabled></input>
+            <input type="submit" value="Continue" id="continue_game" class="bloc submit menu-btn"></input>
             <input type="submit" value="Stats" id="stats_game" class="bloc submit menu-btn"></input>
         </div>
     </content>
