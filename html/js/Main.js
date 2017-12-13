@@ -59,6 +59,8 @@ function LoadGame() {
     }, 1000);
 
     IsGameStarted = true;
+
+    Map.createGrid();
 }
 
 function SaveGame() {
@@ -66,6 +68,8 @@ function SaveGame() {
 }
 
 function adjust() {
+    $('#map').add(Map.grid).attr({'width': $(window).width() * ZOOM, 'height': $(window).height()  * ZOOM});
+
     var coef = {x: ($(window).width() / lastWindowWidth), y: ($(window).height() / lastWindowHeight)};
     $('.needResize')
         .resizable("option", "maxWidth", $(window).width() * 0.9)

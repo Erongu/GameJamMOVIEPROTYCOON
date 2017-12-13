@@ -5,7 +5,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
     <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="/js/jquery/jquery-ui.js"></script>
     <script src="//code.jquery.com/jquery-migrate-git.min.js"></script>
 
     <script src="//rawgit.com/alexanderdickson/waitForImages/2.2.0/dist/jquery.waitforimages.min.js"></script>
@@ -13,19 +12,22 @@
     <script src="//rawgit.com/rochal/jQuery-slimScroll/v1.3.8/jquery.slimscroll.min.js"></script>
     <script src="//rawgit.com/jquery/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
 
+    <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
     <script src="https://code.createjs.com/soundjs-0.6.2.min.js"></script>
 
     <script src="js/vendor.js"></script>
     <script src="js/trim-canvas.js"></script>
 
     <script src="js/Main.js"></script>
-
     <script src="js/GameObject.js"></script>
+
+    <script src="js/game/Map.js"></script>
 
     <script src="js/interfaces/Interface.js"></script>
     <script src="js/interfaces/Events.js"></script>
 
     <script src="js/jquery/js.cookie.min.js"></script>
+    <script src="js/jquery/jquery-ui.js"></script>
 
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/ui-darkness/jquery-ui.css"/>
@@ -51,9 +53,6 @@
         <div id="decors"></div>
     </div>
     <svg id="grid"></svg>
-    <svg id="selector" width="500" height="500">
-        <polygon points="" />
-    </svg>
     <img id="cursor" src="" />
     <svg id="hover"></svg>
 </section>
@@ -121,7 +120,7 @@
 <section id="new_game_popup" class="interface middle">
     <header class="bloc itf-head oh">
     </header>
-    <content class="bloc h p6 itf-content needScroll">
+    <content class="bloc p6 itf-text">
         <div class="popup_content">
             <h1>Player name:</h1>
                 <input type="input" placeholder="Jean-Marc" id="new_game_player_name" class="bloc submit menu-btn">
