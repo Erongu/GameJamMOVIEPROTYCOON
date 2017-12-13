@@ -100,7 +100,7 @@
                 </ul>
                 <h1><b>OR</b></h1>
                 <br>
-                <input type="submit" value="Play as Guest" id="connect_login" class="bloc submit"></input>
+                <input type="submit" value="Play as Guest" id="connect_login" class="bloc submit">
             </div>
         </div>
     </content>
@@ -111,9 +111,9 @@
     </header>
     <content class="bloc p6 itf-text">
         <div class="popup_content">
-            <input type="submit" value="New game" id="start_new_game" class="bloc submit menu-btn"></input>
-            <input type="submit" value="Continue" id="continue_game" class="bloc submit menu-btn"></input>
-            <input type="submit" value="Stats" id="stats_game" class="bloc submit menu-btn"></input>
+            <input type="submit" value="New game" id="start_new_game" class="bloc submit menu-btn">
+            <input type="submit" value="Continue" id="continue_game" class="bloc submit menu-btn">
+            <input type="submit" value="Stats" id="stats_game" class="bloc submit menu-btn">
         </div>
     </content>
 </section>
@@ -124,27 +124,27 @@
     <content class="bloc p6 itf-text">
         <div class="popup_content">
             <h1>Player name:</h1>
-                <input type="input" placeholder="Jean-Marc" id="new_game_player_name" class="bloc submit menu-btn"></input>
+                <input type="input" placeholder="Jean-Marc" id="new_game_player_name" class="bloc submit menu-btn">
             <h1>Production name:</h1>
-                <input type="input" placeholder="Alpa Company" id="new_game_company_name" class="bloc submit menu-btn"></input>
+                <input type="input" placeholder="Alpa Company" id="new_game_company_name" class="bloc submit menu-btn">
             <h1>Preview:</h1>
                 <center><image src="images/avatar/main_player_walk.gif"></image></center>
             <br>
-            <input type="submit" value="Create" id="create_new_game" class="bloc submit menu-btn"></input>
+            <input type="submit" value="Create" id="create_new_game" class="bloc submit menu-btn">
         </div>
     </content>
 </section>
 
-<!--section id="song_popup" class="interface left bottom music">
+<section id="song_popup" class="interface left bottom music">
     <header class="bloc itf-head oh">
     </header>
     <content class="bloc p6 itf-text">
         <div class="popup_content" id="songs">
-            <iframe src="https://open.spotify.com/embed/user/21kkw67vms6rceggcpk6a4hai/playlist/2YwAhPCvxW8iWlNmPnyPf6"
-                    width="250" height="80" frameborder="0" allowtransparency="true"></iframe>
+            <h1>Music volume: </h1>
+            <input type="range" value="0.5" min="0" max="1" step="any" onchange="volumeChange()" id="music_volume" class="bloc submit menu-btn">
         </div>
     </content>
-</section>-->
+</section>
 
 <footer id="footer-navigation" class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container-fluid container-footer">

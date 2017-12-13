@@ -127,4 +127,11 @@ function loadSound () {
 
 function playSound(event) {
     main_theme = createjs.Sound.play("main_theme");
+    main_theme.volume = 0.5;
+}
+
+function volumeChange() {
+    let volume = $("#music_volume").val();
+    main_theme.volume = volume;
+    console.log("Change volume to " + volume);
 }
