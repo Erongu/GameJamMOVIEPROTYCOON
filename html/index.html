@@ -19,9 +19,10 @@
 
     <script src="js/Main.js"></script>
 
-    <script src="js/socket/socket.js"></script>
-    <script src="js/socket/CurrentUser.js"></script>
+    <script src="js/CurrentUser.js"></script>
+
     <script src="js/interfaces/Interface.js"></script>
+    <script src="js/interfaces/Events.js"></script>
 
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/ui-darkness/jquery-ui.css"/>
@@ -31,6 +32,7 @@
     <link rel="stylesheet" href="css/fonts.css"/>
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/interface.css">
 
 
 </head>
@@ -51,7 +53,7 @@
 </section>
 
 
-<section id="login_popup" class="interface closable middle">
+<section id="login_popup" class="interface middle">
     <header class="bloc itf-head oh">
         <i class="fa fa-cube"></i> Connexion
     </header>
@@ -87,13 +89,19 @@
     </content>
 </section>
 
-<section id="servers_popup" class="interface ignore">
+<section id="menu_popup" class="interface middle">
     <header class="bloc itf-head oh">
-        <i class="fa fa-cube"></i> Choix du Jeu
+        <i class="fa fa-cube"></i> Menu principal
     </header>
     <content class="bloc p6 itf-text">
-        <div class="popup_content" id="games_available">
+        <div class="popup_content">
             <ul>
+                <li>
+                    <input type="submit" value="Nouvelle partie" id="start_new_game" class="bloc submit"></input>
+                </li>
+                <li>
+                    <input type="submit" value="Continuer" id="continue_game" class="bloc submit"></input>
+                </li>
             </ul>
         </div>
     </content>
@@ -124,17 +132,17 @@
             <ul class="nav navbar-nav navbar-right">
                 <li id="pseudoName">
                     <a>
-                        <span><strong>Pseudo</strong>: ?</span>
+                        <span><strong>Pseudo</strong>: Guest_666</span>
                     </a>
                 </li>
-                <li id="level">
+                <li id="money">
                     <a>
-                        <span><strong>Niveau</strong>: ?</span>
+                        <span><strong>Argent</strong>: 0$</span>
                     </a>
                 </li>
                 <li id="gold">
                     <a>
-                        <span><strong>Gold</strong>: ?</span>
+                        <span><strong>Date</strong>: 20/02/1928 13:00</span>
                     </a>
                 </li>
             </ul>
