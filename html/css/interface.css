@@ -70,6 +70,22 @@
     font-family: inherit;
     cursor: pointer;
     transition: all 0.2s;
+    margin-bottom: 10px;
+}
+
+.menu-btn {
+    height: 36px;
+    line-height: 36px;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0);
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
 }
 
 .submit .fa {
