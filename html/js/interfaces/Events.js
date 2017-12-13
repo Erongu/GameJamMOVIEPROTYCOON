@@ -7,9 +7,9 @@ $(function () {
             $(this).css("display", "none");
         });
 
-        let game = Cookies.get("game");
+        let localGameObject = Cookies.get("game");
 
-        if(game == null || game.lose){
+        if(localGameObject == null || localGameObject.lose){
             $("#continue_game").prop("disabled", true);
         }
     });
@@ -21,5 +21,31 @@ $(function () {
 
         $("#new_game_popup").css("display", "block");
         $("#new_game_popup").addClass("fadeInDown animated");
+    });
+
+    $("#create_new_game").on('click', function () {
+        let playerName = $("#new_game_player_name").val();
+        let companyName = $("#new_game_company_name").val();
+
+        if(playerName == ""){
+            playerName = "Jean-Marc";
+        }
+
+        if(companyName == ""){
+            companyName = "Alpa Company";
+        }
+
+        GameObject.player_name = playerName;
+        GameObject.company_name = companyName;
+        GameObject.lose = false;
+        GameObject.date = new Date(1891, 4, 11, 9, 30, 0, 0);
+
+        Cookies.set("game", GameObject);
+
+        LoadGame();
+    });
+
+    $("#continue_game").on('click', function () {
+        LoadGame();
     });
 })

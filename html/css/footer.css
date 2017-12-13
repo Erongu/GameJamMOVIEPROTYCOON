@@ -56,7 +56,6 @@ ol, ul {
 .nav>li {
     position: relative;
     display: block;
-	margin-top: 10px;
 }
 
 
@@ -68,7 +67,7 @@ ol, ul {
 
 
 
-.navbar-inverse .nav>li>a {
+.navbar-inverse .nav>li {
     padding: 14px 15px 20px;
     border-left: 1px solid #101417;
     color: #d6d6d6;

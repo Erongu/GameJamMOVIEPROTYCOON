@@ -1,6 +1,7 @@
-var CurrentUser ={
-	globalId: 0,
-	pseudo: "?",
-	jeu: "?",
-	level: "?",
-}
+var GameObject = {
+	player_name: "",
+	company_name: "",
+	lose: false,
+	money: 0,
+	date: new Date()
+};

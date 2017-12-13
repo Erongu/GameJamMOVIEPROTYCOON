@@ -3,7 +3,7 @@
     right: 600px;
     width: 400px;
     height: 600px;
-    display: block;
+    display: none;
 }
 
 #login_popup {

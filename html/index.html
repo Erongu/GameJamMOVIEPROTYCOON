@@ -13,6 +13,7 @@
     <script src="//rawgit.com/rochal/jQuery-slimScroll/v1.3.8/jquery.slimscroll.min.js"></script>
     <script src="//rawgit.com/jquery/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
 
+    <script src="https://code.createjs.com/soundjs-0.6.2.min.js"></script>
 
     <script src="js/vendor.js"></script>
     <script src="js/trim-canvas.js"></script>
@@ -127,14 +128,14 @@
             <h1>Production name:</h1>
                 <input type="input" placeholder="Alpa Company" id="new_game_company_name" class="bloc submit menu-btn"></input>
             <h1>Preview:</h1>
-                <center><image src="images/avatar/main_player.png"></image></center>
+                <center><image src="images/avatar/main_player_walk.gif"></image></center>
             <br>
-            <input type="submit" value="Create" id="create_game" class="bloc submit menu-btn"></input>
+            <input type="submit" value="Create" id="create_new_game" class="bloc submit menu-btn"></input>
         </div>
     </content>
 </section>
 
-<section id="song_popup" class="interface left bottom">
+<!--section id="song_popup" class="interface left bottom music">
     <header class="bloc itf-head oh">
     </header>
     <content class="bloc p6 itf-text">
@@ -143,7 +144,7 @@
                     width="250" height="80" frameborder="0" allowtransparency="true"></iframe>
         </div>
     </content>
-</section>
+</section>-->
 
 <footer id="footer-navigation" class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container-fluid container-footer">
@@ -156,20 +157,17 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li id="pseudoName">
-                    <a>
-                        <span><strong>Pseudo</strong>: Guest_666</span>
-                    </a>
+                <li>
+                    <span><strong>Name</strong>: <b id="info_playerName">Guest_666</b></span>
                 </li>
-                <li id="money">
-                    <a>
-                        <span><strong>Argent</strong>: 0$</span>
-                    </a>
+                <li>
+                    <span><strong>Company</strong>: <b id="info_companyName">Guest_666</b></span>
                 </li>
-                <li id="gold">
-                    <a>
-                        <span><strong>Date</strong>: 20/02/1928 13:00</span>
-                    </a>
+                <li>
+                    <span><strong>Monney</strong>: <b id="info_money">0$</b></span>
+                </li>
+                <li>
+                    <span><strong>Date</strong>: <b id="info_date">20/02/1928 13:00</b></span>
                 </li>
             </ul>
         </div>
