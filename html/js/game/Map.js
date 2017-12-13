@@ -53,5 +53,45 @@ var Map = {
         for (; cellY >= 2 * MAP_CELLS_HEIGHT; cellY -= 2 * MAP_CELLS_HEIGHT, mapY++)
             ;
         return {cellX: cellX, cellY: cellY, mapX: mapX, mapY: mapY, cellId: this.coordsToCell(cellX, cellY)};
+    },
+    createMap:function () {
+        //layer sol / background
+        this.createCanvas().attr({
+            'id': 'canvas_0',
+            'width': screen.width,
+            'height': screen.height
+        }).css({
+            'left': 0 + 'px',
+            'top': 0 + 'px'
+        }).appendTo($("#ground"));
+
+        //layer personnages
+        this.createCanvas().attr({
+            'id': 'canvas_1',
+            'width': screen.width,
+            'height': screen.height
+        }).css({
+            'left': 0 + 'px',
+            'top': 0 + 'px'
+        }).appendTo($("#sprites"));
+
+        //layer meuble
+        this.createCanvas().attr({
+            'id': 'canvas_2',
+            'width': screen.width,
+            'height': screen.height
+        }).css({
+            'left': 0 + 'px',
+            'top': 0 + 'px'
+        }).appendTo($("#decors"));
+    },
+    loadMap: function () {
+
+    },
+    createCanvas: function () {
+        return $(document.createElement('canvas'));
+    },
+    getCanvasByLayer: function (layerId) {
+        return $('#canvas_' + layerId);
     }
 }

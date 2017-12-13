@@ -69,6 +69,8 @@ function LoadGame() {
     $("body").css("background", "rgb(0, 0, 0)");
 
     Map.showGrid();
+    Map.createMap();
+    Map.loadMap();
 }
 
 function SaveGame() {
