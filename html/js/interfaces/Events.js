@@ -3,7 +3,7 @@ $(function () {
         $("#menu_popup").css("display", "block");
         $("#menu_popup").addClass("fadeInDown animated");
 
-        createjs.Sound.play("whoosh");
+        playCustomSound("whoosh");
         $("#login_popup").addClass("fadeOutDown animated").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
             $(this).css("display", "none");
         });
@@ -16,7 +16,7 @@ $(function () {
     });
 
     $("#start_new_game").on('click', function () {
-        createjs.Sound.play("whoosh");
+        playCustomSound("whoosh");
         $("#menu_popup").addClass("fadeOutDown animated").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
             $(this).css("display", "none");
         });
