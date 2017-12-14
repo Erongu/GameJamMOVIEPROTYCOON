@@ -176,6 +176,10 @@
     margin-top: 220px;
 }
 
+#job_offers:hover{
+    border: 2px solid rgba(0,160,80,0);
+}
+
 #stats_succes{
     background-color: rgba(0,0,0,0);
     height: 110px;
