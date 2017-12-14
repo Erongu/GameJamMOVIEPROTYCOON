@@ -230,7 +230,11 @@ var Map = {
                 }
 
                 newTile.on('click', function () {
-                    //
+                    switch($(this).attr('id')){
+                        case "object_0":
+                            $("#makefilm_popup").show();
+                            break;
+                    }
                 });
 
             };

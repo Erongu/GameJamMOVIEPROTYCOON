@@ -112,13 +112,14 @@ $(function () {
         $("#makefilm_pegi_popup").show();
         $("#makefilm_pegi_popup").css("z-index", "16777271");
     })
-    
+
     $("#pick_next").on("click", function () {
         let name = $("#pick_name").val();
         GameObject.currentFilm.name = name;
 
         if(GameObject.currentFilm.name != null && GameObject.currentFilm.topic != null && GameObject.currentFilm.genre != null && GameObject.currentFilm.pegi != null){
             $("#makefilm_popup").hide();
+            $("#makefilm_step2_popup").show();
             //next
         }
     })
