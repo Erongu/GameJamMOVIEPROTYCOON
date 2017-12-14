@@ -170,28 +170,77 @@
 }
 
 #job_offers{
+    position: relative;
     background-color: rgba(0,0,0,0);
-    height: 100px;
-    width: 190px;
-    margin-top: 220px;
+    height: 75px;
+    width: 116px;
+    left: -10px;
+    top: 146px;
+    border: 3px solid #ffd509;
+    overflow: hidden;
+
 }
 
 #job_offers:hover{
-    border: 5px solid #333333;
+    border: 5px solid #ffd509;
     overflow: hidden;
+    cursor: pointer;
 }
+
 
 #stats_succes{
+    position: relative;
     background-color: rgba(0,0,0,0);
-    height: 110px;
-    width: 190px;
-    margin-top: 67px;
-    margin-left: 490px;
+    height: 85px;
+    width: 116px;
+    left: 290px;
+    top: 183px;
+    border: 3px solid #ffd509;
+    overflow: hidden;
+
 }
 
+#stats_succes:hover{
+    border: 5px solid #ffd509;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
 #dev_tech{
+    position: relative;
     background-color: rgba(0,0,0,0);
-    height: 155px;
-    width: 290px;
-    margin-top: 45px;
+    height: 115px;
+    width: 183px;
+    left: -10px;
+    top: 200px;
+    border: 3px solid #ffd509;
+    overflow: hidden;
+
+}
+
+#dev_tech:hover{
+    border: 5px solid #ffd509;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+
+#rent_stage{
+    position: relative;
+    background-color: rgba(0,0,0,0);
+    height: 115px;
+    width: 183px;
+    left: 230px;
+    top: 120px;
+    border: 3px solid #ffd509;
+    overflow: hidden;
+
+}
+
+#rent_stage:hover{
+    border: 5px solid #ffd509;
+    overflow: hidden;
+    cursor: pointer;
 }
