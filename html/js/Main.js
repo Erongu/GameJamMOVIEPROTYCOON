@@ -28,8 +28,8 @@ $(function () {
         }
     }, 10000);
 
-    $("#hover").css("display", "none");
-    $("#grid").css("display", "none");
+    $("#hover").hide();
+    $("#grid").hide();
 
     Map.createGrid();
     Map.initCellPos();

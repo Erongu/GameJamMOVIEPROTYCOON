@@ -193,7 +193,22 @@ var Map = {
         this.loadGfxHtml();
     },
     loadGfxHtml: function () {
-        
+        var _this = this;
+
+        Tiles.forEach(function(elem){
+            let path = getTilePath(elem.gfx_id);
+            let cell = _this.getCellData(elem.cell_id);
+
+            let image = new Image();
+            image.src = path;
+
+            image.onload = function () {
+                $(document.createElementNS("http://www.w3.org/2000/svg", 'image')).attr('src', path).attr('x',cell.x).attr('y', cell.y).attr('width', this.width).attr('height', this.height).attr("z-index","100000000").appendTo($("#interactives"));
+            };
+
+        });
+
+        $("#interactives").show();
     },
     loadGfx: function () {
         var gfx_requested = 0;
