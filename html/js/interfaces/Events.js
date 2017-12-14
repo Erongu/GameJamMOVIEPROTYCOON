@@ -62,4 +62,13 @@ $(function () {
         MouseManager['down'][mouse](this, event.clientX, event.clientY, event);
     });
 
+    $("#skip_dialog").on('click', function () {
+        playCustomSound("whoosh");
+
+        $("#dialog_popup").addClass("bounceOutDown animated").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+            $(this).hide();
+            $(this).removeClass("bounceOutDown");
+        });
+    })
+
 })

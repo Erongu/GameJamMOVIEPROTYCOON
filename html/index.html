@@ -27,6 +27,8 @@
     <script src="js/interfaces/Interface.js"></script>
     <script src="js/interfaces/Events.js"></script>
 
+    <script src="js/data/dialogs.js"></script>
+
     <script src="js/jquery/js.cookie.min.js"></script>
     <script src="js/jquery/jquery-ui.js"></script>
 
@@ -125,7 +127,7 @@
     </content>
 </section>
 
-<section id="song_popup" class="interface left bottom music">
+<section id="song_popup" class="interface left bottom noClose">
     <header class="bloc itf-head oh">
         <mark class="control_vol"> Control Volume</mark>
         <div class="itf-btn itf-reduce"><i class="fa fa-minus"></i><i class="fa fa-plus"></i></div>
@@ -140,7 +142,7 @@
     </content>
 </section>
 
-<section id="newspaper_popup" class="interface left news">
+<section id="newspaper_popup" class="interface left noClose">
     <header class="bloc itf-head oh">
         <mark class="newspaperhead"> Newspaper</mark>
         <div class="itf-btn itf-reduce"><i class="fa fa-minus"></i><i class="fa fa-plus"></i></div>
@@ -163,6 +165,25 @@
     </div>
     <svg id="grid" class="fullscreen"></svg>
 </section>
+
+<section id="dialog_popup" class="interface middle bounceInDown animated noClose">
+    <header class="bloc itf-head oh">
+        <mark class="newspaperhead" id="dialog_title"> Welcome !</mark>
+    </header>
+    <content class="bloc p6 itf-text">
+        <div class="popup_content">
+            <div class="Active">
+                <br>
+                <div id="dialog_text" style="text-align:center">
+                    Welcome to Movie Prod Tycoon !
+                </div>
+                <br><br>
+                <input type="submit" value="OK" id="skip_dialog" class="bloc submit">
+            </div>
+        </div>
+    </content>
+</section>
+
 
 <footer id="footer-navigation" class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container-fluid container-footer">

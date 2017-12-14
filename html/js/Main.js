@@ -40,7 +40,7 @@ function LoadGame() {
     GameObject.date = new Date(GameObject.date);
 
     $('.interface').each(function () {
-        if(!$(this).hasClass("music") && !$(this).hasClass("news")) {
+        if(!$(this).hasClass("noClose")) {
             $(this).addClass("fadeOutDown animated").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
                 $(this).remove();
             });
@@ -74,6 +74,8 @@ function LoadGame() {
     Map.showGrid();
     Map.createMap();
     Map.loadMap();
+
+    openDialog_data(Dialogs[0]);
 }
 
 function SaveGame() {
@@ -196,4 +198,16 @@ function isCanvasBlank(canvas) {
     blank.height = canvas.height;
 
     return canvas.toDataURL() == blank.toDataURL();
+}
+
+function openDialog(title, text) {
+    $("#dialog_title").html(title);
+    $("#dialog_text").html(text);
+    $("#dialog_popup").show();
+}
+
+function openDialog_data(dialog) {
+    $("#dialog_title").html(dialog.title);
+    $("#dialog_text").html(dialog.body);
+    $("#dialog_popup").show();
 }
