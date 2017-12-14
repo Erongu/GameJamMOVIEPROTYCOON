@@ -189,6 +189,13 @@ var Map = {
             _this.loadPlayer();
         }
 
+        //this.loadGfx();
+        this.loadGfxHtml();
+    },
+    loadGfxHtml: function () {
+        
+    },
+    loadGfx: function () {
         var gfx_requested = 0;
         var gfx_loaded = 0;
         var _this = this;
@@ -217,7 +224,6 @@ var Map = {
             };
 
         });
-
     },
     loadPlayer: function () {
         /*var _this = this;
