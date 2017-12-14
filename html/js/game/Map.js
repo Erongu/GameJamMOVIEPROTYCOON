@@ -11,6 +11,8 @@ var Map = {
     cellPos: [],
     grid: $("#grid"),
     interval: null,
+    objects: [],
+    updateObject: false,
     mainPlayerSprite: {
         currentAnimation:{},
         cell: {},
@@ -21,11 +23,7 @@ var Map = {
             let canvas = Map.getCanvasByLayer(1);
             let context = canvas.getContext('2d');
 
-            if(this.cell.id == null) {
-                this.cell.id = 403;
-                this.cell.x = $("#cell_403").attr('x');
-                this.cell.y = $("#cell_403").attr('y');
-            }
+            this.cell = Map.getCellData(403);
 
             if(this.currentAnimation == null || !this.currentAnimation.started)
                 return;
@@ -191,6 +189,35 @@ var Map = {
             _this.loadPlayer();
         }
 
+        var gfx_requested = 0;
+        var gfx_loaded = 0;
+        var _this = this;
+
+        Tiles.forEach(function (element) {
+            let img = new Image();
+            img.src = getTilePath(element.gfx_id);
+
+            gfx_requested++;
+
+            img.onload = function() {
+                gfx_loaded++;
+
+                var tileElement = {
+                    image: this,
+                    elm: element
+                };
+
+                _this.objects.push(tileElement);
+                console.log("Image loaded "  + gfx_loaded);
+
+                if(gfx_requested == gfx_loaded){
+                    console.log("All image loaded");
+                    _this.updateObject = true;
+                }
+            };
+
+        });
+
     },
     loadPlayer: function () {
         /*var _this = this;
@@ -215,6 +242,13 @@ var Map = {
     getCanvasByLayer: function (layerId) {
         return document.getElementById('canvas_' + layerId);
     },
+    getCellData: function (id) {
+        return {
+            id: id,
+            x: $("#cell_" + id).attr('x'),
+            y: $("#cell_" + id).attr('y')
+         };
+    },
     update: function () {
         var speed = 500;
 
@@ -224,8 +258,35 @@ var Map = {
 
         clearInterval(this.interval);
         this.interval = setInterval(this.realUpdate, speed);
+        setInterval(this.updateObjects, 100);
     },
     realUpdate: function () {
         Map.mainPlayerSprite.update();
+    },
+    updateObjects: function () {
+        if(Map.updateObject){
+            Map.objects.forEach(function (elm) {
+                let canvas = Map.getCanvasByLayer(2);
+                let context = canvas.getContext('2d');
+
+
+                let cell = Map.getCellData(elm.elm.cell_id);
+
+                console.log(cell.x - elm.image.width);
+
+
+                if(elm.elm.reverse){
+                    context.save();
+                    context.scale(-1, 1);
+                    context.drawImage(elm.image, -(cell.x) - elm.elm.offset.x, cell.y - elm.elm.offset.y);
+                    context.restore();
+                }
+                else {
+                    context.drawImage(elm.image, cell.x - elm.elm.offset.x, cell.y - elm.elm.offset.y);
+                }
+
+                console.log("Drawing image " + elm.image);
+            });
+        }
     }
 }

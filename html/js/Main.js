@@ -208,6 +208,10 @@ function getBackgroundPath(mapId) {
     return 'assets/maps/' + mapId + '/background.png';
 }
 
+function getTilePath(gfx_id) {
+    return 'assets/tiles/' + gfx_id + '.png';
+}
+
 function getPlayerPath() {
     return 'assets/player/idle_static.png';
 }
