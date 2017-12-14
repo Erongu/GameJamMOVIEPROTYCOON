@@ -28,6 +28,18 @@
     display: none;
 }
 
+#makefilm_genre_popup {
+    top: 30%;
+    width: 220px;
+    display: none;
+}
+
+#makefilm_pegi_popup {
+    top: 30%;
+    width: 220px;
+    display: none;
+}
+
 
 #dialog_popup {
     top: 0px;
@@ -285,4 +297,12 @@
     width: 220px;
     margin: 5px 10px;
     float: left;
+}
+
+.pegi > img{
+    vertical-align: middle;
+}
+
+#pick_pegi > img{
+    vertical-align: middle;
 }

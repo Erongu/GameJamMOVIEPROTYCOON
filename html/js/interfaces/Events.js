@@ -66,22 +66,60 @@ $(function () {
         playCustomSound("whoosh");
 
         $("#dialog_popup").addClass("bounceOutDown animated").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-            $(this).hide();
             $(this).removeClass("bounceOutDown");
+            $(this).hide();
         });
     });
 
     $(".topic").on('click', function () {
-        //$(this).hide();
         GameObject.currentFilm.topic = $(this).text();
         $("#pick_topic").html(GameObject.currentFilm.topic);
+
+        playCustomSound("whoosh");
+
         $("#makefilm_topic_popup").hide();
+    });
+
+    $(".genre").on('click', function () {
+        GameObject.currentFilm.genre = $(this).text();
+        $("#pick_genre").html(GameObject.currentFilm.genre);
+
+        playCustomSound("whoosh");
+
+        $("#makefilm_genre_popup").hide();
+    });
+
+    $(".pegi").on('click', function () {
+        GameObject.currentFilm.pegi = $(this).val();
+        $("#pick_pegi").html($(this).html());
+
+        playCustomSound("whoosh");
+
+        $("#makefilm_pegi_popup").hide();
     });
 
     $("#pick_topic").on('click', function () {
         $("#makefilm_topic_popup").show();
-        $("#content_test").focus();
-
+        $("#makefilm_topic_popup").css("z-index", "16777271");
     })
 
+    $("#pick_genre").on('click', function () {
+        $("#makefilm_genre_popup").show();
+        $("#makefilm_genre_popup").css("z-index", "16777271");
+    })
+
+    $("#pick_pegi").on('click', function () {
+        $("#makefilm_pegi_popup").show();
+        $("#makefilm_pegi_popup").css("z-index", "16777271");
+    })
+    
+    $("#pick_next").on("click", function () {
+        let name = $("#pick_name").val();
+        GameObject.currentFilm.name = name;
+
+        if(GameObject.currentFilm.name != null && GameObject.currentFilm.topic != null && GameObject.currentFilm.genre != null && GameObject.currentFilm.pegi != null){
+            $("#makefilm_popup").hide();
+            //next
+        }
+    })
 })
