@@ -169,9 +169,10 @@
     background-size: 100% 100%;
 }
 
-.menu_newspaper{
-    background-color: white;
-    margin-left: 6px;
-    padding: 10px 3px 5px 2px;
-    color: #000;
+#job_offers{
+    background-color: rgba(0,0,0,0);
+    height: 100px;
+    width: 190px;
+    margin-top: 220px;
+
 }
