@@ -238,6 +238,48 @@
     </content>
 </section>
 
+<section id="makefilm_genre_popup" class="interface ignore center bounceInDown animated noClose">
+    <header class="bloc itf-head oh">
+        <mark class="newspaperhead">Pick a Genre</mark>
+    </header>
+    <content id="content_test" class="bloc p6 itf-text">
+        <div class="popup_content">
+            <div class="Active">
+                <div>
+                    <button class="bloc submit makefilm genre">Adventure</button>
+                    <button class="bloc submit makefilm genre">Comedy</button>
+                    <button class="bloc submit makefilm genre">Thriller</button>
+                    <button class="bloc submit makefilm genre">History</button>
+                    <button class="bloc submit makefilm genre">Action</button>
+                    <button class="bloc submit makefilm genre">Documentary</button>
+                </div>
+                <br>
+            </div>
+        </div>
+    </content>
+</section>
+
+<section id="makefilm_pegi_popup" class="interface ignore center bounceInDown animated noClose">
+    <header class="bloc itf-head oh">
+        <mark class="newspaperhead">Pick a Genre</mark>
+    </header>
+    <content id="content_test" class="bloc p6 itf-text">
+        <div class="popup_content">
+            <div class="Active">
+                <div>
+                    <button class="bloc submit makefilm pegi">Tout public</button>
+                    <button class="bloc submit makefilm pegi" value="Pegi 3">Pegi <img src="images/pegi/pegi3.png" width="28" height="28"></button>
+                    <button class="bloc submit makefilm pegi" value="Pegi 7">Pegi <img src="images/pegi/pegi7.png" width="28" height="28"></button>
+                    <button class="bloc submit makefilm pegi" value="Pegi 12">Pegi <img src="images/pegi/pegi12.png" width="28" height="28"></button>
+                    <button class="bloc submit makefilm pegi" value="Pegi 16">Pegi <img src="images/pegi/pegi16.png" width="28" height="28"></button>
+                    <button class="bloc submit makefilm pegi" value="Pegi 18">Pegi <img src="images/pegi/pegi18.png" width="28" height="28"></button>
+                </div>
+                <br>
+            </div>
+        </div>
+    </content>
+</section>
+
 <section id="makefilm_popup" class="interface middle bounceInDown animated noClose">
     <header class="bloc itf-head oh">
         <mark class="newspaperhead">Create a Movie   </mark>
@@ -247,27 +289,46 @@
             <div class="Active">
                 <br>
                 <div id="makefilm_text" style="text-align:center">
-                    <h1 class="big"><strong>Movie name: </strong></h1><input type="text" placeholder="Name" id="makefilm_name" class="bloc input">
+                    <h1 class="big"><strong>Movie name: </strong></h1>
+                    <input type="text" placeholder="Name" id="pick_name" class="bloc input">
                     <br>
-                    <button id="pick_topic" class="bloc submit makefilm">
-                        Pick a Topic <i class="fa fa-bars" aria-hidden="true"></i>
-                    </button>
-                    <button class="bloc submit makefilm">
-                        Pick a Genre <i class="fa fa-bars" aria-hidden="true"></i>
-                    </button>
-                    <button class="bloc submit makefilm">
-                        Pick a Public <i class="fa fa-bars" aria-hidden="true"></i>
-                    </button>
+                    <button id="pick_topic" class="bloc submit makefilm">Pick a Topic <i class="fa fa-bars" aria-hidden="true"></i></button>
+                    <button id="pick_genre" class="bloc submit makefilm">Pick a Genre <i class="fa fa-bars" aria-hidden="true"></i></button>
+                    <button id="pick_pegi" class="bloc submit makefilm">Pick a Public <i class="fa fa-bars" aria-hidden="true"></i></button>
                 </div>
                 <br>
-                <button class="bloc submit next" >
-                    Next  <i class="fa fa-play" aria-hidden="true"></i>
-                </button>
+                <button class="bloc submit next" id="pick_next" >Next  <i class="fa fa-play" aria-hidden="true"></i></button>
             </div>
         </div>
     </content>
 </section>
 
+
+<section id="makefilm_step2_popup" class="interface middle bounceInDown animated noClose">
+    <header class="bloc itf-head oh">
+        <mark class="newspaperhead">Create a Movie - Pick a technology</mark>
+    </header>
+    <content class="bloc p6 itf-text">
+        <div class="popup_content">
+            <div class="Active">
+                <br>
+                <div id="makefilm_text" style="text-align:center">
+                    <h1 class="big"><strong>Movie name: </strong></h1>
+                    <input type="text" placeholder="Name" id="pick_name" class="bloc input">
+                    <br>
+                    <button id="pick_topic" class="bloc submit makefilm">Pick a Topic <i class="fa fa-bars" aria-hidden="true"></i></button>
+                    <button id="pick_genre" class="bloc submit makefilm">Pick a Genre <i class="fa fa-bars" aria-hidden="true"></i></button>
+                    <button id="pick_pegi" class="bloc submit makefilm">Pick a Public <i class="fa fa-bars" aria-hidden="true"></i></button>
+                </div>
+                <br>
+                <h1 class="big"><strong>Cost: 0</strong></h1>
+                <br>
+                <button class="bloc submit back" id="pick_back_step2_next" >Next  <i class="fa fa-play" aria-hidden="true"></i></button>
+                <button class="bloc submit next" id="pick_step2_next" >Next  <i class="fa fa-play" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </content>
+</section>
 
 
 <footer id="footer-navigation" class="navbar navbar-inverse navbar-fixed-bottom">
