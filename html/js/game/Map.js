@@ -230,8 +230,7 @@ var Map = {
                 }
 
                 newTile.on('click', function () {
-                    console.log("test");
-                    $(this).hide();
+                    //
                 });
 
             };
@@ -309,7 +308,7 @@ var Map = {
 
         clearInterval(this.interval);
         this.interval = setInterval(this.realUpdate, speed);
-        setInterval(this.updateObjects, 100);
+        //setInterval(this.updateObjects, 100);
     },
     realUpdate: function () {
         Map.mainPlayerSprite.update();

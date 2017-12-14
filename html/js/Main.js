@@ -237,3 +237,7 @@ function openDialog_data(dialog) {
 
     playDialog("dialog");
 }
+
+function openMenuMakeFilm() {
+    
+}

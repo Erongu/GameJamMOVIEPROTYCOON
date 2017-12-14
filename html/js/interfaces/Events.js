@@ -56,11 +56,6 @@ $(function () {
         MouseManager['down'][mouse](this, event.clientX, event.clientY, event);
     });
 
-    $("#interactives").on('mousedown', 'image', function (event) {
-        let mouse = 'tile_mouse' + event.which;
-        MouseManager['down'][mouse](this, event.clientX, event.clientY, event);
-    });
-
     $("#moving").on('mousedown', function (event) {
         let mouse = 'mouse' + event.which;
         console.log(event.which);
@@ -74,6 +69,19 @@ $(function () {
             $(this).hide();
             $(this).removeClass("bounceOutDown");
         });
+    });
+
+    $(".topic").on('click', function () {
+        //$(this).hide();
+        GameObject.currentFilm.topic = $(this).text();
+        $("#pick_topic").html(GameObject.currentFilm.topic);
+        $("#makefilm_topic_popup").hide();
+    });
+
+    $("#pick_topic").on('click', function () {
+        $("#makefilm_topic_popup").show();
+        $("#content_test").focus();
+
     })
 
 })

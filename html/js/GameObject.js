@@ -3,5 +3,12 @@ var GameObject = {
 	company_name: "",
 	lose: false,
 	money: 0,
-	date: new Date()
+	date: new Date(),
+	currentFilm:{
+		name: "",
+		topic: "",
+		genre: "",
+		public: "",
+		published: false,
+	}
 };

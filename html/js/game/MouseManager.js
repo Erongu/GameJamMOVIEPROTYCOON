@@ -10,7 +10,7 @@ var MouseManager = {
 
         },
         'tile_mouse1': function (elm, mouseX, mouseY) {
-            $(elm).hide();
+            //$(elm).hide();
             //$("#newspaper_popup").hide();
 
         },
@@ -20,7 +20,11 @@ var MouseManager = {
         }
     },
     'enter': {
-        'mouse0': function (elm) {
+        'tile_mouse0': function (elm) {
+            console.log("entered");
+            $(elm).css({"border-color": "#C1E0FF",
+                "border-width":"1px",
+                "border-style":"solid"});
         },
         'mouse1': function (elm) {
         },
