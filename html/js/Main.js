@@ -40,7 +40,7 @@ function LoadGame() {
     GameObject.date = new Date(GameObject.date);
 
     $('.interface').each(function () {
-        if(!$(this).hasClass("music")) {
+        if(!$(this).hasClass("music") && !$(this).hasClass("news")) {
             $(this).addClass("fadeOutDown animated").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
                 $(this).remove();
             });
@@ -49,7 +49,10 @@ function LoadGame() {
 
     playCustomSound("whoosh");
 
-    $("#footer-navigation").css("display", "block");
+    $("#newspaper_popup").show();
+    $("#newspaper_popup").addClass("fadeInDown animated");
+
+    $("#footer-navigation").show();
     $("#footer-navigation").addClass("fadeInDown animated");
 
     $("#info_playerName").text(GameObject.player_name);

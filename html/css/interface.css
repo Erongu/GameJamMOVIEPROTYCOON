@@ -32,9 +32,9 @@
 #newspaper_popup {
     top: 0px;
     right: 200px;
-    height: 800px;
-    display: block;
-    width: 700px
+    height: 584px;
+    width: 427px;
+    display: none;
 }
 
 

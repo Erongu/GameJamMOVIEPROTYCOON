@@ -42,7 +42,7 @@
 
 
 </head>
-<body>
+<body oncontextmenu="return false;">
 <section id="infos">
     <!--p id="cellId">CellId: 0</p>-->
 </section>
@@ -139,15 +139,16 @@
     </content>
 </section>
 
-<section id="newspaper_popup" class="interface">
+<section id="newspaper_popup" class="interface left news">
     <header class="bloc itf-head oh">
         <mark class="newspaperhead"> Newspaper</mark>
         <div class="itf-btn itf-reduce"><i class="fa fa-minus"></i><i class="fa fa-plus"></i></div>
     </header>
     <content class="bloc h p6 itf-content needScroll newspaper">
-        <div class="submit" id="job_offers">
+        <div class="bloc p6 log" style="top: 5px" id="newspaper">
+            <div class="submit" id="job_offers"></div>
         </div>
-        <div class="submit" id="stats_succes">
+          <div class="submit" id="stats_succes"></div>
         </div>
         <div class="submit" id="dev_tech">
         </div>
