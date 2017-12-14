@@ -1,0 +1,224 @@
+﻿<!doctype html>
+<html lang="FR">
+<head>
+    <title>Movie Prod Tycoon</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-git.min.js"></script>
+
+    <script src="//rawgit.com/alexanderdickson/waitForImages/2.2.0/dist/jquery.waitforimages.min.js"></script>
+    <script src="//rawgit.com/jpillora/notifyjs/v0.4.2/dist/notify.js"></script>
+    <script src="//rawgit.com/rochal/jQuery-slimScroll/v1.3.8/jquery.slimscroll.min.js"></script>
+    <script src="//rawgit.com/jquery/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+
+    <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+    <script src="https://code.createjs.com/soundjs-0.6.2.min.js"></script>
+
+    <script src="js/vendor.js"></script>
+    <script src="js/trim-canvas.js"></script>
+
+    <script src="js/Main.js"></script>
+    <script src="js/GameObject.js"></script>
+
+    <script src="js/game/Map.js"></script>
+    <script src="js/game/MouseManager.js"></script>
+
+    <script src="js/interfaces/Interface.js"></script>
+    <script src="js/interfaces/Events.js"></script>
+
+    <script src="js/data/dialogs.js"></script>
+    <script src="js/data/tiles.js"></script>
+
+    <script src="js/jquery/js.cookie.min.js"></script>
+    <script src="js/jquery/jquery-ui.js"></script>
+
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/ui-darkness/jquery-ui.css"/>
+    <link rel="stylesheet" type="text/css" href="css/awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/alpa.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/fonts.css"/>
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/interface.css">
+
+
+</head>
+<!-- oncontextmenu="return false; -->
+<body>
+<section id="infos">
+    <!--p id="cellId">CellId: 0</p>-->
+</section>
+
+<section id="logs_interface" class="interface needResize fadeInRight animated">
+    <header class="bloc itf-head oh">
+        <div class="itf-btn itf-reduce"><i class="fa fa-minus"></i><i class="fa fa-plus"></i></div>
+    </header>
+    <content class="bloc h p6 itf-content needScroll">
+        <div class="bloc p6 log" style="top: 5px" id="logs">
+        </div>
+    </content>
+</section>
+
+
+<section id="login_popup" class="interface middle">
+    <header class="bloc itf-head oh">
+    </header>
+    <content class="bloc p6 itf-text">
+        <div class="popup_content">
+            <div id="LogInDialog" class="Active">
+                <h3>Connect with</h3>
+                <ul id="LogInOptions">
+                    <li>
+                        <a href="/auth/steam"><img src="/images/loginIcons/steam.png" alt="Steam"
+                                                   title="Connect with Steam"></a>
+                    </li>
+                    <li>
+                        <a href="/auth/twitch"><img src="/images/loginIcons/twitch.png" alt="Twitch"
+                                                    title="Connect with Twitch"></a>
+                    </li>
+                    <li>
+                        <a href="/auth/twitter"><img src="/images/loginIcons/twitter.png" alt="Twitter"
+                                                     title="Connect with Twitter"></a>
+                    </li>
+                    <li>
+                        <a href="/auth/facebook"><img src="/images/loginIcons/facebook.png" alt="Facebook"
+                                                      title="Connect with Facebook"></a>
+                    </li>
+                    <li>
+                        <a href="/auth/google"><img src="/images/loginIcons/google.png" alt="Google+"
+                                                    title="Connect with Google+"></a>
+                    </li>
+                </ul>
+                <h1><b>OR</b></h1>
+                <br>
+                <input type="submit" value="Play as Guest" id="connect_login" class="bloc submit">
+            </div>
+        </div>
+    </content>
+</section>
+
+<section id="menu_popup" class="interface middle">
+    <header class="bloc itf-head oh">
+    </header>
+    <content class="bloc p6 itf-text">
+        <div class="popup_content">
+            <input type="submit" value="New game" id="start_new_game" class="bloc submit menu-btn">
+            <input type="submit" value="Continue" id="continue_game" class="bloc submit menu-btn">
+            <input type="submit" value="Stats" id="stats_game" class="bloc submit menu-btn">
+        </div>
+    </content>
+</section>
+
+<section id="new_game_popup" class="interface middle">
+    <header class="bloc itf-head oh">
+    </header>
+    <content class="bloc p6 itf-text">
+        <div class="popup_content">
+            <h1>Player name:</h1>
+            <input type="input" placeholder="Jean-Marc" id="new_game_player_name" class="bloc submit menu-btn">
+            <h1>Production name:</h1>
+            <input type="input" placeholder="Alpa Company" id="new_game_company_name" class="bloc submit menu-btn">
+            <h1>Preview:</h1>
+            <center><image src="images/avatar/main_player_walk.gif"></image></center>
+            <br>
+            <input type="submit" value="Create" id="create_new_game" class="bloc submit menu-btn">
+        </div>
+    </content>
+</section>
+
+<section id="song_popup" class="interface left bottom noClose">
+    <header class="bloc itf-head oh">
+        <mark class="control_vol"> Control Volume</mark>
+        <div class="itf-btn itf-reduce"><i class="fa fa-minus"></i><i class="fa fa-plus"></i></div>
+    </header>
+    <content class="bloc h p6 itf-content needScroll">
+        <div class="bloc p6 log" style="top: 5px" id="soundControl">
+            <h1>Music volume: </h1>
+            <input type="range" value="0.5" min="0" max="1" step="any" onchange="volumeChange()" id="music_volume" class="bloc submit menu-btn">
+            <h1>Sound Effects volume: </h1>
+            <input type="range" value="0.5" min="0" max="1" step="any" onchange="volumeEffectsChange()" id="sound_effects_volume" class="bloc submit menu-btn">
+            <h1>Dialog volume: </h1>
+            <input type="range" value="0.5" min="0" max="1" step="any" onchange="volumeDialog()" id="dialog_volume" class="bloc submit menu-btn">
+        </div>
+    </content>
+</section>
+
+<section id="newspaper_popup" class="interface left noClose">
+    <header class="bloc itf-head oh">
+        <mark class="newspaperhead"> Newspaper</mark>
+        <div class="itf-btn itf-reduce"><i class="fa fa-minus"></i><i class="fa fa-plus"></i></div>
+    </header>
+    <content class="bloc h p6 itf-content needScroll newspaper">
+        <div class="bloc p6 log" style="top: 5px" id="newspaper">
+            <div class="submit" id="job_offers"></div>
+            <div class="submit" id="stats_succes"></div>
+            <div class="submit" id="dev_tech"></div>
+            <div class="submit" id="rent_stage"></div>
+        </div>
+    </content>
+</section>
+
+<section id="map" class="fullscreen" >
+    <div id="moving">
+        <div id="ground" class="fullscreen"></div>
+        <div id="sprites" class="fullscreen"></div>
+        <div id="decors"  class="fullscreen">
+            <svg id="interactives" class="fullscreen" xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink" style="z-index: 601; display: none"></svg>
+        </div>
+    </div>
+    <svg id="grid" class="fullscreen"></svg>
+</section>
+
+
+<section id="dialog_popup" class="interface middle bounceInDown animated noClose">
+    <header class="bloc itf-head oh">
+        <mark class="newspaperhead" id="dialog_title"></mark>
+    </header>
+    <content class="bloc p6 itf-text">
+        <div class="popup_content">
+            <div class="Active">
+                <br>
+                <div id="dialog_text" style="text-align:center">
+                </div>
+                <br><br>
+                <input type="submit" value="OK" id="skip_dialog" class="bloc submit">
+            </div>
+        </div>
+    </content>
+</section>
+
+
+<footer id="footer-navigation" class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="container-fluid container-footer">
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <a>
+                        <span>© 2017 Alpa PRODUCTION</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <span><strong>Name</strong>: <b id="info_playerName">Guest_666</b></span>
+                </li>
+                <li>
+                    <span><strong>Company</strong>: <b id="info_companyName">Guest_666</b></span>
+                </li>
+                <li>
+                    <span><strong>Money</strong>: <b id="info_money">0$</b></span>
+                </li>
+                <li>
+                    <span><strong>Date</strong>: <b id="info_date">20/02/1928 13:00</b></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+<script type="text/javascript">
+    Load();
+</script>

@@ -4,4 +4,3 @@
 logs/access.log
 *.log
 *.pid
-html/index.html

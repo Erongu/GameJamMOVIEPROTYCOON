@@ -60,13 +60,6 @@
     display: none;
 }
 
-#mailbox_popup {
-    top: -20px;
-    right: 200px;
-    height: 200px;
-    width: 400px;
-    display: block;
-}
 
 #menu_popup {
     top: 0px;
@@ -194,20 +187,8 @@
     color: #000;
 }
 
-.mailboxhead{
-    background-color: white;
-    margin-left: 6px;
-    padding: 10px 3px 5px 2px;
-    color: #000;
-}
-
 .newspaper{
     background: url(../images/journal.jpg);
-    background-size: 100% 100%;
-}
-
-.mailbox{
-    background: url(../images/mailbox.jpg);
     background-size: 100% 100%;
 }
 
@@ -220,47 +201,10 @@
     top: 146px;
     border: 3px solid #ffd509;
     overflow: hidden;
-}
 
+}
 
 #job_offers:hover{
-    border: 5px solid #ffd509;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-#job_search{
-    position: relative;
-    background-color: rgba(0,0,0,0);
-    height: 163px;
-    width: 197px;
-    left: -10px;
-    top: -10px;
-    border: 3px solid #ffd509;
-    overflow: hidden;
-}
-
-
-#job_search:hover{
-    border: 5px solid #ffd509;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-
-#contract_offers{
-    position: relative;
-    background-color: rgba(0,0,0,0);
-    height: 163px;
-    width: 197px;
-    left: 190px;
-    top: -183px;
-    border: 3px solid #ffd509;
-    overflow: hidden;
-}
-
-
-#contract_offers:hover{
     border: 5px solid #ffd509;
     overflow: hidden;
     cursor: pointer;
