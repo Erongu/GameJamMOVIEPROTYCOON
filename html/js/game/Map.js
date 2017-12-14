@@ -203,7 +203,37 @@ var Map = {
             image.src = path;
 
             image.onload = function () {
-                $(document.createElementNS("http://www.w3.org/2000/svg", 'image')).attr('src', path).attr('x',cell.x).attr('y', cell.y).attr('width', this.width).attr('height', this.height).attr("z-index","100000000").appendTo($("#interactives"));
+                let svg = $("#interactives");
+
+                var svgimg = document.createElementNS("http://www.w3.org/2000/svg", "image");
+                svgimg.setAttributeNS("http://www.w3.org/1999/xlink", 'xlink:href', path);
+
+                svgimg.setAttribute("id", 'object_' + elem.uid);
+
+                if(!elem.reverse) {
+                    svgimg.setAttribute("x", cell.x - elem.offset.x);
+                }else{
+                    svgimg.setAttribute("x", -(cell.x) - elem.offset.x);
+                }
+                svgimg.setAttribute("y", cell.y - elem.offset.y);
+
+                svgimg.setAttribute("width", this.width);
+                svgimg.setAttribute("height", this.height);
+
+                svg.append(svgimg);
+
+                var newTile = $("#object_" + elem.uid)
+                newTile.addClass("tile");
+
+                if(elem.reverse){
+                    newTile.addClass("reverseTile");
+                }
+
+                newTile.on('click', function () {
+                    console.log("test");
+                    $(this).hide();
+                });
+
             };
 
         });

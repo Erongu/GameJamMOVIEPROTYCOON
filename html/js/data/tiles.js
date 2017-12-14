@@ -1,5 +1,6 @@
 var Tiles = [
 	{ // 0 Camera
+		uid: 0,
 		gfx_id: 1,
 		cell_id: 404,
 		reverse: true,

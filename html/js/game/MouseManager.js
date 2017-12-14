@@ -9,6 +9,11 @@ var MouseManager = {
             //$("#newspaper_popup").hide();
 
         },
+        'tile_mouse1': function (elm, mouseX, mouseY) {
+            $(elm).hide();
+            //$("#newspaper_popup").hide();
+
+        },
         'mouse3': function (elm) {
             //newspaper_popup
            // $("#newspaper_popup").show();

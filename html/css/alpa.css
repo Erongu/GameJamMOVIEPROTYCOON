@@ -59,3 +59,17 @@ body{
     position:fixed;
     top:0;left:0;bottom:0;right:0;
 }
+
+#interactives image{
+    color: pink;
+    border: 10px solid pink;
+    border-image: repeating-linear-gradient( 45deg, pink, pink 1%, purple 1%, purple 8%) 10;
+}
+
+#interactives image:hover {
+    border: solid 2px red;
+}
+
+.reverseTile{
+    transform: scaleX(-1);
+}

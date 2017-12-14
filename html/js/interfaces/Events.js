@@ -56,6 +56,11 @@ $(function () {
         MouseManager['down'][mouse](this, event.clientX, event.clientY, event);
     });
 
+    $("#interactives").on('mousedown', 'image', function (event) {
+        let mouse = 'tile_mouse' + event.which;
+        MouseManager['down'][mouse](this, event.clientX, event.clientY, event);
+    });
+
     $("#moving").on('mousedown', function (event) {
         let mouse = 'mouse' + event.which;
         console.log(event.which);
