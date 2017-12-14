@@ -154,14 +154,24 @@ function loadSound () {
         Cookies.set("effects_volume", effectsVol);
     }
 
+    let dialogVol = Cookies.get("dialogs_volume");
+
+    if(dialogVol == null){
+        dialogVol = 0.5;
+        Cookies.set("dialog_volume", dialogVol);
+    }
+
     $("#music_volume").val(volume);
     $("#sound_effects_volume").val(effectsVol);
+    $("#dialog_volume").val(dialogVol);
 
     createjs.Sound.alternateExtensions = ["mp3", "wav"];
     createjs.Sound.registerSound("music/main_theme.mp3", "main_theme");
     createjs.Sound.on("fileload", this.playSound, this);
 
     createjs.Sound.registerSound("music/effects/whoosh.mp3", "whoosh");
+    createjs.Sound.registerSound("music/dialogs/dialog.mp3", "dialog");
+
 }
 
 function playSound(event) {
@@ -170,6 +180,10 @@ function playSound(event) {
 
 function playCustomSound(music) {
     createjs.Sound.play(music, {volume: Cookies.get("effects_volume")});
+}
+
+function playDialog(music) {
+    createjs.Sound.play(music, {volume: Cookies.get("dialog_volume")});
 }
 
 function volumeChange() {
@@ -183,6 +197,12 @@ function volumeEffectsChange() {
     let volume = $("#sound_effects_volume").val();
     Cookies.set("effects_volume", volume);
 }
+
+function volumeDialog() {
+    let volume = $("#dialog_volume").val();
+    Cookies.set("dialog_volume", volume);
+}
+
 
 function getBackgroundPath(mapId) {
     return 'assets/maps/' + mapId + '/background.png';
@@ -210,4 +230,6 @@ function openDialog_data(dialog) {
     $("#dialog_title").html(dialog.title);
     $("#dialog_text").html(dialog.body);
     $("#dialog_popup").show();
+
+    playDialog("dialog");
 }
