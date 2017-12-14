@@ -6,7 +6,13 @@ var MouseManager = {
         'mouse1': function (elm, mouseX, mouseY) {
             var pos = Map.polygonToPosition($(elm).data());
             console.log(pos.cellId);
+            //$("#newspaper_popup").hide();
+
         },
+        'mouse3': function (elm) {
+            //newspaper_popup
+           // $("#newspaper_popup").show();
+        }
     },
     'enter': {
         'mouse0': function (elm) {

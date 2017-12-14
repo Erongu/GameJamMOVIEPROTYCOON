@@ -1,12 +1,11 @@
 $(function () {
     $("#connect_login").on('click', function () {
-        $("#newspaper_popup").css("display", "block")
-        $("#menu_popup").css("display", "block");
+        $("#menu_popup").show();
         $("#menu_popup").addClass("fadeInDown animated");
 
         playCustomSound("whoosh");
         $("#login_popup").addClass("fadeOutDown animated").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-            $(this).css("display", "none");
+            $(this).hide();
         });
 
         let localGameObject = Cookies.get("game");
@@ -19,10 +18,10 @@ $(function () {
     $("#start_new_game").on('click', function () {
         playCustomSound("whoosh");
         $("#menu_popup").addClass("fadeOutDown animated").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-            $(this).css("display", "none");
+            $(this).hide();
         });
 
-        $("#new_game_popup").css("display", "block");
+        $("#new_game_popup").show();
         $("#new_game_popup").addClass("fadeInDown animated");
     });
 
@@ -54,6 +53,12 @@ $(function () {
 
     $("#grid").on('mousedown', 'polygon', function (event) {
         let mouse = 'mouse' + event.which;
+        MouseManager['down'][mouse](this, event.clientX, event.clientY, event);
+    });
+
+    $("#moving").on('mousedown', function (event) {
+        let mouse = 'mouse' + event.which;
+        console.log(event.which);
         MouseManager['down'][mouse](this, event.clientX, event.clientY, event);
     });
 
