@@ -177,7 +177,8 @@
 }
 
 #job_offers:hover{
-    border: 2px solid rgba(0,160,80,0);
+    border: 5px solid #333333;
+    overflow: hidden;
 }
 
 #stats_succes{
