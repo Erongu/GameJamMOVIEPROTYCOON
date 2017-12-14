@@ -35,6 +35,14 @@ function Load() {
             });
         }
 
+        if ($(this).hasClass("center")) {
+            $(this).css({
+                'left': ($(window).width() - $(this).outerWidth()) / 2,
+                'margin-top': '0px',
+                'margin-left': '0px'
+            });
+        }
+
         if ($(this).hasClass("middle")) {
             $(this).css({
                 'top': ($(window).height() - $(this).outerHeight()) / 2,

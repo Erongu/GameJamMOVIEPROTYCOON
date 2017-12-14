@@ -13,6 +13,21 @@
     height: 400px;
     display: block;
 }
+#makefilm_popup {
+    top: 0px;
+    right: 200px;
+    width: 500px;
+    height: 400px;
+    display: block;
+}
+#makefilm_topic_popup {
+    top: 30px;
+    right: 200px;
+    width: 500px;
+    height: 400px;
+    display: none;
+}
+
 
 #dialog_popup {
     top: 0px;
@@ -251,4 +266,23 @@
     border: 5px solid #ffd509;
     overflow: hidden;
     cursor: pointer;
+}
+
+.makefilm{
+    background-color: #1b1b1b;
+}
+
+.next{
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.big{
+    font-size: large;
+}
+
+.topic{
+    display: block;
+    width: 220px;
+    margin: 5px 10px;
+    float: left;
 }
