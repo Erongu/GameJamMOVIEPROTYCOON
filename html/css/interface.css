@@ -32,9 +32,9 @@
 #newspaper_popup {
     top: 0px;
     right: 200px;
-    height: 80px;
+    height: 800px;
     display: block;
-    width: 260px
+    width: 700px
 }
 
 
@@ -155,6 +155,18 @@
     margin-left: 6px;
     padding: 10px 3px 5px 2px;
     color: #000;
+}
+
+.newspaperhead{
+    background-color: white;
+    margin-left: 6px;
+    padding: 10px 3px 5px 2px;
+    color: #000;
+}
+
+.newspaper{
+    background: url(../images/journal.jpg);
+    background-size: 100% 100%;
 }
 
 .menu_newspaper{
