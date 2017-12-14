@@ -50,7 +50,7 @@ function LoadGame() {
     playCustomSound("whoosh");
 
     $("#footer-navigation").css("display", "block");
-    $("#footer-navigation").addClass("fadeInUp animated");
+    $("#footer-navigation").addClass("fadeInDown animated");
 
     $("#info_playerName").text(GameObject.player_name);
     $("#info_companyName").text(GameObject.company_name);
@@ -66,7 +66,7 @@ function LoadGame() {
 
     IsGameStarted = true;
 
-    $("body").css("background", "rgb(0, 0, 0)");
+    $("body").css("background", "rgb(222, 208, 156)");
 
     Map.showGrid();
     Map.createMap();
@@ -177,4 +177,20 @@ function volumeChange() {
 function volumeEffectsChange() {
     let volume = $("#sound_effects_volume").val();
     Cookies.set("effects_volume", volume);
+}
+
+function getBackgroundPath(mapId) {
+    return 'assets/maps/' + mapId + '/background.png';
+}
+
+function getPlayerPath() {
+    return 'assets/player/idle_static.png';
+}
+
+function isCanvasBlank(canvas) {
+    var blank = document.createElement('canvas');
+    blank.width = canvas.width;
+    blank.height = canvas.height;
+
+    return canvas.toDataURL() == blank.toDataURL();
 }

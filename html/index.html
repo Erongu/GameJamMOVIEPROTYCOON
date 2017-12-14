@@ -22,6 +22,7 @@
     <script src="js/GameObject.js"></script>
 
     <script src="js/game/Map.js"></script>
+    <script src="js/game/MouseManager.js"></script>
 
     <script src="js/interfaces/Interface.js"></script>
     <script src="js/interfaces/Events.js"></script>
@@ -44,17 +45,6 @@
 <body>
 <section id="infos">
     <!--p id="cellId">CellId: 0</p>-->
-</section>
-
-<section id="map">
-    <div id="moving">
-        <div id="ground"></div>
-        <div id="limits"></div>
-        <div id="decors"></div>
-    </div>
-    <svg id="grid"></svg>
-    <img id="cursor" src="" />
-    <svg id="hover"></svg>
 </section>
 
 <section id="logs_interface" class="interface needResize fadeInRight animated">
@@ -123,11 +113,11 @@
     <content class="bloc p6 itf-text">
         <div class="popup_content">
             <h1>Player name:</h1>
-                <input type="input" placeholder="Jean-Marc" id="new_game_player_name" class="bloc submit menu-btn">
+            <input type="input" placeholder="Jean-Marc" id="new_game_player_name" class="bloc submit menu-btn">
             <h1>Production name:</h1>
-                <input type="input" placeholder="Alpa Company" id="new_game_company_name" class="bloc submit menu-btn">
+            <input type="input" placeholder="Alpa Company" id="new_game_company_name" class="bloc submit menu-btn">
             <h1>Preview:</h1>
-                <center><image src="images/avatar/main_player_walk.gif"></image></center>
+            <center><image src="images/avatar/main_player_walk.gif"></image></center>
             <br>
             <input type="submit" value="Create" id="create_new_game" class="bloc submit menu-btn">
         </div>
@@ -149,16 +139,13 @@
     </content>
 </section>
 
-<section id="newspaper_popup" class="interface middle">
-    <header class="bloc itf-head oh">
-        <mark class="menu_newspaper"> Newspaper</mark>
-        <div class="itf-btn itf-reduce"><i class="fa fa-minus"></i><i class="fa fa-plus"></i></div>
-    </header>
-    <content class="bloc h p6 itf-content needScroll">
-        <div class="bloc p6 log" style="top: 5px" id="soundControl">
-
-        </div>
-    </content>
+<section id="map" class="fullscreen" >
+    <div id="moving">
+        <div id="ground" class="fullscreen"></div>
+        <div id="sprites" class="fullscreen"></div>
+        <div id="decors"  class="fullscreen"></div>
+    </div>
+    <svg id="grid" class="fullscreen"></svg>
 </section>
 
 <footer id="footer-navigation" class="navbar navbar-inverse navbar-fixed-bottom">
@@ -179,7 +166,7 @@
                     <span><strong>Company</strong>: <b id="info_companyName">Guest_666</b></span>
                 </li>
                 <li>
-                    <span><strong>Monney</strong>: <b id="info_money">0$</b></span>
+                    <span><strong>Money</strong>: <b id="info_money">0$</b></span>
                 </li>
                 <li>
                     <span><strong>Date</strong>: <b id="info_date">20/02/1928 13:00</b></span>
