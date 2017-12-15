@@ -21,10 +21,6 @@ var MouseManager = {
     },
     'enter': {
         'tile_mouse0': function (elm) {
-            console.log("entered");
-            $(elm).css({"border-color": "#C1E0FF",
-                "border-width":"1px",
-                "border-style":"solid"});
         },
         'mouse1': function (elm) {
         },

@@ -117,7 +117,9 @@ var Map = {
         }
     },
     showGrid: function () {
-      $("#grid").css("display", "block");
+        if(DEBUG) {
+            $("#grid").show();
+        }
     },
     coordsToCell: function (x, y) {
         return x + y * MAP_CELLS_WIDTH;
@@ -233,6 +235,7 @@ var Map = {
                     switch($(this).attr('id')){
                         case "object_0":
                             $("#makefilm_popup").show();
+                            _this.removeObject(1);
                             break;
                     }
                 });
@@ -342,5 +345,8 @@ var Map = {
                 console.log("Drawing image " + elm.image);
             });
         }
+    },
+    removeObject: function (id) {
+        $("#object_" + id).remove();
     }
 }
