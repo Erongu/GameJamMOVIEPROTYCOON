@@ -110,13 +110,29 @@ $(function () {
 
     $("#pick_next").on("click", function () {
         let name = $("#pick_name").val();
-        GameObject.currentFilm.name = name;
+        let topic = $("#pick_topic").text();
+        let genre = $("#pick_genre").text();
+        let pegi = $("#pick_pegi").text();
+
+        if(name.indexOf("Pick") == -1) {
+            GameObject.currentFilm.name = name;
+        }
+        if(topic.indexOf("Pick") == -1) {
+            GameObject.currentFilm.topic = topic;
+        }
+        if(genre.indexOf("Pick") == -1) {
+            GameObject.currentFilm.genre = genre;
+        }
+        if(pegi.indexOf("Pick") == -1) {
+            GameObject.currentFilm.pegi = pegi;
+        }
 
         if(!isNullOrEmpty(GameObject.currentFilm.name) && !isNullOrEmpty(GameObject.currentFilm.topic) && !isNullOrEmpty(GameObject.currentFilm.genre) && !isNullOrEmpty(GameObject.currentFilm.pegi)){
             $("#makefilm_popup").hide();
             $("#makefilm_step2_popup").show();
             //next
         }
+        updatePrice();
     });
 
     $(".quality").on('click', function () {
@@ -128,22 +144,126 @@ $(function () {
         }
 
         GameObject.currentFilm.quality = qObj;
-        $("#film_cost").text("Cost: " + numberWithSpaces(filmPrice()) + "$");
+
+        updatePrice();
     });
     
     $("#pick_step2_back").on('click', function () {
         $("#makefilm_popup").show();
         $("#makefilm_step2_popup").hide();
+
+        updatePrice();
     });
 
     $("#pick_step2_next").on('click', function () {
-        $("#makefilm_step2_popup").hide();
-        $("#makefilm_step3_popup").show();
+        if($("#selectableQualities > .ui-selected").length > 0) {
+            let quality = $("#selectableQualities > .ui-selected").val();
+            let qObj = getQuality(quality);
+
+            if (qObj == null) {
+                return;
+            }
+
+            GameObject.currentFilm.quality = qObj;
+
+            $("#makefilm_step2_popup").hide();
+            $("#makefilm_step3_popup").show();
+
+            updatePrice();
+        }
     });
 
     $("#pick_step3_back").on('click', function () {
         $("#makefilm_step2_popup").show();
         $("#makefilm_step3_popup").hide();
 
+        updatePrice();
+    });
+
+    $(".actors").on('click', function () {
+        console.log("test");
+
+        GameObject.currentFilm.actors = [];
+
+        $("#selectableActors > .ui-selected").each(function( index ) {
+            let actorId = $(this).val();
+            let aObj = getActor(actorId);
+
+            if(aObj == null || aObj == -1){
+                return;
+            }
+
+            GameObject.currentFilm.actors.push(aObj);
+        });
+
+        updatePrice();
+    });
+
+    $("#pick_step3_next").on('click', function () {
+        $("#makefilm_step3_popup").hide();
+        $("#makefilm_step4_popup").show();
+
+        updatePrice();
+    });
+    
+    $("#pick_step4_back").on('click', function () {
+        $("#makefilm_step3_popup").show();
+        $("#makefilm_step4_popup").hide();
+
+        updatePrice();
+    });
+
+    $("#special_effects_slider").on('input', function () {
+       $("#special_effects_value").text($(this).val());
+    });
+
+    $("#dialog_slider").on('input', function () {
+        $("#dialog_value").text($(this).val());
+    });
+
+    $("#dubbing_slider").on('input', function () {
+        $("#dubbing_value").text($(this).val());
+    });
+
+    $("#pick_step4_next").on('click', function () {
+        $("#makefilm_step4_popup").hide();
+        $("#makefilm_step5_popup").show();
+
+        GameObject.currentFilm.stats.special_effect = $("#special_effects_slider").val();
+        GameObject.currentFilm.stats.dialog_slider = $("#dialog_slider").val();
+        GameObject.currentFilm.stats.dubbing_slider = $("#dubbing_slider").val();
+
+        updatePrice();
+    });
+
+    $("#pick_step5_back").on('click', function () {
+        $("#makefilm_step5_popup").hide();
+        $("#makefilm_step4_popup").show();
+
+        updatePrice();
+    });
+
+    $("#pick_step5_next").on('click', function () {
+        $("#makefilm_step5_popup").hide();
+
+        GameObject.currentFilm.stats.image = $("#image_slider").val();
+        GameObject.currentFilm.stats.script = $("#script_slider").val();
+        GameObject.currentFilm.stats.sound = $("#sound_slider").val();
+
+        updatePrice();
+
+        openDialog_data(1);
+    });
+
+    $("#image_slider").on('input', function () {
+        $("#image_value").text($(this).val());
+    });
+
+    $("#sound_slider").on('input', function () {
+        $("#sound_value").text($(this).val());
+    });
+
+    $("#script_slider").on('input', function () {
+        $("#script_value").text($(this).val());
     });
 })

@@ -27,7 +27,7 @@ var Topics = [
 				type_id: 5,
 				coef: 0.6
 			}
-		];
+		]
 	},
 	{ // Airplane
 		uid: 1,
@@ -57,6 +57,6 @@ var Topics = [
 				type_id: 5,
 				coef: 0.6
 			}
-		];
+		]
 	},
 ];
