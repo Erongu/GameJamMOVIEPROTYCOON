@@ -30,7 +30,7 @@ var Topics = [
 		];
 	},
 	{ // Airplane
-		uid: 0,
+		uid: 1,
 		name: "Airplane",
 		symbiose: [ // RESTEZ DANS L'ORDRE SVP
 			{
