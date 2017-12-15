@@ -13,4 +13,9 @@ var Dialogs = [
 		title: "Make a new film !",
 		body: "blablabla"
 	}
+	{ // 2
+		title: "{FILM_NAME}",
+		body: "Your {FILM_NAME} as just been published"
+			"Wait at least 3 days before the first reviews for your movie"
+	},
 ];
