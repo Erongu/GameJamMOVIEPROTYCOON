@@ -19,4 +19,16 @@ var Tiles = [
 			y: -5
 		}
 	},
+
+	{ // 2 Micro
+		uid: 2,
+		gfx_id: 7,
+		cell_id: 683,
+		reverse: false,
+		offset:{
+			x: 0,
+			y: 0
+		}
+	},
+
 ];
