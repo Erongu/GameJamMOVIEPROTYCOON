@@ -101,17 +101,17 @@ $(function () {
     $("#pick_topic").on('click', function () {
         $("#makefilm_topic_popup").show();
         $("#makefilm_topic_popup").css("z-index", "16777271");
-    })
+    });
 
     $("#pick_genre").on('click', function () {
         $("#makefilm_genre_popup").show();
         $("#makefilm_genre_popup").css("z-index", "16777271");
-    })
+    });
 
     $("#pick_pegi").on('click', function () {
         $("#makefilm_pegi_popup").show();
         $("#makefilm_pegi_popup").css("z-index", "16777271");
-    })
+    });
 
     $("#pick_next").on("click", function () {
         let name = $("#pick_name").val();
@@ -122,5 +122,11 @@ $(function () {
             $("#makefilm_step2_popup").show();
             //next
         }
-    })
+    });
+    
+    $(".quality").on('click', function () {
+        let quality = $(this).val();
+
+
+    });
 })

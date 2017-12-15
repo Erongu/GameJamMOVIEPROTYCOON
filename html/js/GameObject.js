@@ -4,6 +4,7 @@ var GameObject = {
 	lose: false,
 	money: 0,
 	date: new Date(),
+	isNewGame: true,
 	currentFilm:{
 		name: "",
 		topic: "",
