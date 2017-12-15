@@ -9,7 +9,7 @@ var IsGameStarted = false;
 
 var main_theme;
 
-var DEBUG = false;
+var DEBUG = true;
 
 function Load() {
     adjust();
