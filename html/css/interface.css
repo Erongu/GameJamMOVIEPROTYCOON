@@ -597,3 +597,13 @@ small{
     border-radius: 8.3px;
     border: 1.3px solid #007daa;
 }
+
+.lastGame_stats{
+    top:80px;
+    display: block;
+    position: absolute;
+    right: 10px;
+    height: 100px;
+    width: 250px;
+    background: rgba(0, 0, 0, 0.38);
+}

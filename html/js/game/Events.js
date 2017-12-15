@@ -60,10 +60,8 @@ $(function () {
         playCustomSound("whoosh");
         playDialog("super");
 
-        $("#dialog_popup").addClass("bounceOutDown animated").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-            $(this).removeClass("bounceOutDown");
-            $(this).hide();
-        });
+        $("#dialog_popup").hide();
+
     });
 
     $(".topic").on('click', function () {
@@ -229,9 +227,11 @@ $(function () {
         $("#makefilm_step4_popup").hide();
         $("#makefilm_step5_popup").show();
 
+        GameObject.currentFilm.stats = {};
+
         GameObject.currentFilm.stats.special_effect = $("#special_effects_slider").val();
-        GameObject.currentFilm.stats.dialog_slider = $("#dialog_slider").val();
-        GameObject.currentFilm.stats.dubbing_slider = $("#dubbing_slider").val();
+        GameObject.currentFilm.stats.dialog = $("#dialog_slider").val();
+        GameObject.currentFilm.stats.dubbing = $("#dubbing_slider").val();
 
         updatePrice();
     });
@@ -252,7 +252,7 @@ $(function () {
 
         updatePrice();
 
-        openDialog_data(1);
+        openDialog_data(Dialogs[1]);
     });
 
     $("#image_slider").on('input', function () {
