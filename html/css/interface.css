@@ -383,3 +383,14 @@
     display: block;
     width: 300px;
 }
+
+small{
+    font-size: small;
+}
+
+.age{
+    display: block;
+    position: relative;
+    text-align: right;
+    bottom: 22px;
+}

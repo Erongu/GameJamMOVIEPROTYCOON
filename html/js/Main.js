@@ -9,7 +9,7 @@ var IsGameStarted = false;
 
 var main_theme;
 
-var DEBUG = true;
+var DEBUG = false;
 
 function Load() {
     adjust();
@@ -84,7 +84,12 @@ function LoadGame() {
     $("body").css("background", "rgb(222, 208, 156)");
 
     //Load Actors
-    $("#selectableActors").html("<li class=\"ui-widget-content quality\" value=\"0\">Acteur 1</li>\n");
+
+    $("#selectableActors").html("");
+    Actors.forEach(function (actor) {
+        $("#selectableActors").append("<li class=\"ui-widget-content quality\" value=\"" + actor.uid + "\">" + actor.name + "<small class='age'> Age: " + actor.age + " Price: " + actor.price +"$</small></li>");
+    })
+
 
     Map.showGrid();
     Map.createMap();

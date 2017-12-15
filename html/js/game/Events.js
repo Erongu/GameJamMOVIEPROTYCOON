@@ -138,6 +138,7 @@ $(function () {
 
     $("#pick_step2_next").on('click', function () {
         $("#makefilm_step2_popup").hide();
+        $("#makefilm_step3_popup").show();
     });
 
     $("#pick_step3_back").on('click', function () {
