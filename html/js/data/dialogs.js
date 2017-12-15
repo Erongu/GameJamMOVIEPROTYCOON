@@ -11,6 +11,16 @@ var Dialogs = [
 	{ // 1
 		title: "Congratulation !",
 		body: "Your movie {FILM_NAME} as just been published<br>"+
-			"Wait at least <strong>3 days</strong> before the first reviews for your movie"
+			"Wait some days before the first reviews for your movie"
+	},
+	{ // 2
+		title: "Wait a minute !",
+		body: "Sorry, you're not good enought to public and make a film in the same time<br>"+
+			"You should try later !"
+	},
+	{ // 3
+		title: "Good job",
+		body: "You're film is no longer in room<br>"+
+			"It mean that you can go back to work now !"
 	},
 ]

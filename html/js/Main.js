@@ -77,9 +77,9 @@ function LoadGame() {
         if(IsGameStarted) {
 
             if(filmInProgress()) {
-                $("#lastGame_stats").show();
+                $(".lastGame_stats").show();
             }else{
-                $("#lastGame_stats").hide();
+                $(".lastGame_stats").hide();
             }
 
             GameObject.date = GameObject.date.addDays(1); // Time...
@@ -89,7 +89,7 @@ function LoadGame() {
             if(filmInProgress()) {
                 $("#currentMovie_enddate").text(30 - GameObject.publishedMovie.dayPassed);
 
-                $("#lastGame_stats").show();
+                $(".lastGame_stats").show();
 
                 var random = getRandomInt(1.15, 1.35);
 
@@ -106,10 +106,14 @@ function LoadGame() {
 
                 if(GameObject.publishedMovie.profit_day < 1){
                     GameObject.publishedMovie = {};
+                    $(".lastGame_stats").hide();
+                    openDialog_data(Dialogs[3]);
                 }
 
                 if(GameObject.publishedMovie.dayPassed > 20){
                     GameObject.publishedMovie = {};
+                    $(".lastGame_stats").hide();
+                    openDialog_data(Dialogs[3]);
                 }
             }
 
@@ -121,7 +125,7 @@ function LoadGame() {
             $("#info_money").text(GameObject.money +"$");
 
         }
-    }, 5000);
+    }, 3000);
 
     IsGameStarted = true;
 
