@@ -20,6 +20,12 @@ $(function () {
         resizeTimer = setTimeout(adjust, 100);
     });
 
+    $( "#selectable" ).selectable({
+        selected: function(event, ui) {
+            $(ui.selected).addClass("ui-selected").siblings().removeClass("ui-selected");
+        }
+    });
+
     loadSound();
 
     setInterval(function(){
@@ -37,7 +43,9 @@ $(function () {
 
 function LoadGame() {
     GameObject = JSON.parse(Cookies.get("game"));
+
     GameObject.date = new Date(GameObject.date);
+    GameObject.isNewGame = GameObject.money == 0;
 
     $('.interface').each(function () {
         if(!$(this).hasClass("noClose")) {
@@ -239,5 +247,9 @@ function openDialog_data(dialog) {
 }
 
 function openMenuMakeFilm() {
+    
+}
+
+function getQuality() {
     
 }

@@ -327,14 +327,26 @@
         <div class="popup_content">
             <div class="Active">
                 <br>
-                <label><input type="checkbox" class="pick_technologies" value="0" />360p ( 1000$ )</label>
-                <label><input type="checkbox" class="pick_technologies" value="0" />720p ( 1000$ )</label>
-                <label><input type="checkbox" class="pick_technologies" value="0" />1080p ( 1000$ )</label>
+                <div class="btn-group" data-toggle="buttons">
+                    <ol id="selectable">
+                        <li class="ui-widget-content quality" value="0">Black & White ( Free )</li>
+                        <li class="ui-widget-content quality" value="1">Colored ( 100$ )</li>
+                        <li class="ui-widget-content quality" value="2">360p ( 300$ ) </li>
+                        <li class="ui-widget-content quality" value="3">720p ( 900$ )</li>
+                        <li class="ui-widget-content quality" value="4">1080p ( 1800$ )</li>
+                        <li class="ui-widget-content quality" value="5">3D ( 10 000$ )</li>
+                        <li class="ui-widget-content quality" value="6">4K ( 100 000$ )</li>
+                        <li class="ui-widget-content quality" value="7">Virtual Reality ( 1 000 000$ )</li>
+                    </ol>
+
+                </div>
                 <br>
                 <h1 class="big"><strong>Cost: 0</strong></h1>
                 <br>
-                <button class="bloc submit back" id="pick_back_step2_next" >Back  <i class="fa fa-play" aria-hidden="true"></i></button>
-                <button class="bloc submit next" id="pick_step2_next" >Next  <i class="fa fa-play" aria-hidden="true"></i></button>
+                <div style="display: flex;">
+                    <button class="bloc submit back red" id="pick_back_step2_next" ><i class="fa fa-reply" aria-hidden="true"></i>  Back</button>
+                    <button class="bloc submit next" id="pick_step2_next" >Next  <i class="fa fa-play" aria-hidden="true"></i></button>
+                </div>
             </div>
         </div>
     </content>
