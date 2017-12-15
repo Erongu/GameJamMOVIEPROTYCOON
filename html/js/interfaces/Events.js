@@ -111,7 +111,7 @@ $(function () {
         let name = $("#pick_name").val();
         GameObject.currentFilm.name = name;
 
-        if(GameObject.currentFilm.name != null && GameObject.currentFilm.topic != null && GameObject.currentFilm.genre != null && GameObject.currentFilm.pegi != null){
+        if(!isNullOrEmpty(GameObject.currentFilm.name) && !isNullOrEmpty(GameObject.currentFilm.topic) && !isNullOrEmpty(GameObject.currentFilm.genre) && !isNullOrEmpty(GameObject.currentFilm.pegi)){
             $("#makefilm_popup").hide();
             $("#makefilm_step2_popup").show();
             //next
@@ -130,4 +130,9 @@ $(function () {
 
         $("#film_cost").text("Cost: " + numberWithSpaces(GameObject.currentFilm.cost) + "$");
     });
+    
+    $("#pick_back_step2_next").on('click', function () {
+        $("#makefilm_popup").show();
+        $("#makefilm_step2_popup").hide();
+    })
 })

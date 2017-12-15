@@ -267,3 +267,13 @@ function getQuality(id) {
 function numberWithSpaces(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
+
+function isNullOrEmpty(e) {
+    if(e == null) {
+        return true;
+    }
+    if(e == "") {
+        return true;
+    }
+    return false;
+}
