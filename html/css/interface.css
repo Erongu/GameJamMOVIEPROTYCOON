@@ -607,8 +607,3 @@ small{
     width: 250px;
     background: rgba(0, 0, 0, 0.38);
 }
-
-#logo{
-    background: url(../images/logo.jpg);
-    background-size: 10% 100%;
-}
