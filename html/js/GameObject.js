@@ -11,5 +11,6 @@ var GameObject = {
 		genre: "",
 		public: "",
 		published: false,
+		cost: 0
 	}
 };

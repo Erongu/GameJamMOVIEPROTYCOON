@@ -21,12 +21,22 @@ var Qualities = [
 	},
 	{
 		id: 4,
-		name: "1080p"
+		name: "1080p",
 		price: 1800,
 	},
 	{
 		id: 5,
-		name: "1080p"
-		price: 1800,
+		name: "3D",
+		price: 10000,
+	},
+	{
+		id: 6,
+		name: "4K",
+		price: 100000,
+	},
+	{
+		id: 7,
+		name: "Virtual Reality",
+		price: 1000000,
 	},
 ];

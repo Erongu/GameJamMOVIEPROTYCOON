@@ -250,6 +250,18 @@ function openMenuMakeFilm() {
     
 }
 
-function getQuality() {
-    
+function getQuality(id) {
+    let result = -1;
+
+    Qualities.forEach(function (elem) {
+        if(elem.id == id){
+            result = elem;
+            return;
+        }
+    });
+    return result;
+}
+
+function numberWithSpaces(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }

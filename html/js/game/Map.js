@@ -117,7 +117,7 @@ var Map = {
         }
     },
     showGrid: function () {
-      // $("#grid").css("display", "block");
+      $("#grid").css("display", "block");
     },
     coordsToCell: function (x, y) {
         return x + y * MAP_CELLS_WIDTH;

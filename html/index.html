@@ -29,6 +29,7 @@
 
     <script src="js/data/dialogs.js"></script>
     <script src="js/data/tiles.js"></script>
+    <script src="js/data/qualities.js"></script>
 
     <script src="js/jquery/js.cookie.min.js"></script>
     <script src="js/jquery/jquery-ui.js"></script>
@@ -168,7 +169,7 @@
             <svg id="interactives" class="fullscreen" xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink" style="z-index: 601; display: none"></svg>
         </div>
     </div>
-    <svg id="grid" class="fullscreen"></svg>
+    <svg id="grid" class="fullscreen" style="z-index: 602;"></svg>
 </section>
 
 
@@ -341,7 +342,7 @@
 
                 </div>
                 <br>
-                <h1 class="big"><strong>Cost: 0</strong></h1>
+                <h1 class="big" id="film_cost"><strong>Cost: 0$</strong></h1>
                 <br>
                 <div style="display: flex;">
                     <button class="bloc submit back red" id="pick_back_step2_next" ><i class="fa fa-reply" aria-hidden="true"></i>  Back</button>

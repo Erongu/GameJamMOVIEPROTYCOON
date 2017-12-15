@@ -56,12 +56,6 @@ $(function () {
         MouseManager['down'][mouse](this, event.clientX, event.clientY, event);
     });
 
-    $("#moving").on('mousedown', function (event) {
-        let mouse = 'mouse' + event.which;
-        console.log(event.which);
-        MouseManager['down'][mouse](this, event.clientX, event.clientY, event);
-    });
-
     $("#skip_dialog").on('click', function () {
         playCustomSound("whoosh");
 
@@ -126,7 +120,14 @@ $(function () {
     
     $(".quality").on('click', function () {
         let quality = $(this).val();
+        let qObj = getQuality(quality);
 
+        if(qObj == null){
+            return;
+        }
 
+        GameObject.currentFilm.cost = qObj.price;
+
+        $("#film_cost").text("Cost: " + numberWithSpaces(GameObject.currentFilm.cost) + "$");
     });
 })

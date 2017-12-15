@@ -4,8 +4,8 @@ var MouseManager = {
 
         },
         'mouse1': function (elm, mouseX, mouseY) {
-            var pos = Map.polygonToPosition($(elm).data());
-            console.log(pos.cellId);
+            var pos = $(elm).attr("id");
+            console.log(pos.split('_')[1]);
             //$("#newspaper_popup").hide();
 
         },
