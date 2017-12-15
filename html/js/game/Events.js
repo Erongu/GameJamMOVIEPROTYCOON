@@ -118,7 +118,7 @@ $(function () {
             //next
         }
     });
-    
+
     $(".quality").on('click', function () {
         let quality = $(this).val();
         let qObj = getQuality(quality);
@@ -127,13 +127,22 @@ $(function () {
             return;
         }
 
-        GameObject.currentFilm.cost = qObj.price;
-
-        $("#film_cost").text("Cost: " + numberWithSpaces(GameObject.currentFilm.cost) + "$");
+        GameObject.currentFilm.quality = qObj;
+        $("#film_cost").text("Cost: " + numberWithSpaces(filmPrice()) + "$");
     });
     
-    $("#pick_back_step2_next").on('click', function () {
+    $("#pick_step2_back").on('click', function () {
         $("#makefilm_popup").show();
         $("#makefilm_step2_popup").hide();
-    })
+    });
+
+    $("#pick_step2_next").on('click', function () {
+        $("#makefilm_step2_popup").hide();
+    });
+
+    $("#pick_step3_back").on('click', function () {
+        $("#makefilm_step2_popup").show();
+        $("#makefilm_step3_popup").hide();
+
+    });
 })

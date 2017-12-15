@@ -22,11 +22,13 @@ $(function () {
         resizeTimer = setTimeout(adjust, 100);
     });
 
-    $( "#selectable" ).selectable({
+    $("#selectableQualities").selectable({
         selected: function(event, ui) {
             $(ui.selected).addClass("ui-selected").siblings().removeClass("ui-selected");
         }
     });
+
+    $("#selectableActors").selectable();
 
     loadSound();
 
@@ -80,6 +82,9 @@ function LoadGame() {
     IsGameStarted = true;
 
     $("body").css("background", "rgb(222, 208, 156)");
+
+    //Load Actors
+    $("#selectableActors").html("<li class=\"ui-widget-content quality\" value=\"0\">Acteur 1</li>\n");
 
     Map.showGrid();
     Map.createMap();

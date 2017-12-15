@@ -208,6 +208,7 @@
 <section id="makefilm_topic_popup" class="interface ignore center bounceInDown animated noClose">
     <header class="bloc itf-head oh">
         <mark class="newspaperhead">Pick a Topic </mark>
+        <div class="itf-btn itf-close"><i class="fa fa-times"></i></div>
     </header>
     <content id="content_test" class="bloc p6 itf-text">
         <div class="popup_content">
@@ -223,7 +224,6 @@
                     <button class="bloc submit makefilm topic">Fantasy</button>
                     <button class="bloc submit makefilm topic">Government</button>
                     <button class="bloc submit makefilm topic">Hacking</button>
-                    <button class="bloc submit makefilm topic">History</button>
                     <button class="bloc submit makefilm topic">Horror</button>
                     <button class="bloc submit makefilm topic">Hospital</button>
                     <button class="bloc submit makefilm topic">Hunting</button>
@@ -257,6 +257,7 @@
 <section id="makefilm_genre_popup" class="interface ignore center bounceInDown animated noClose">
     <header class="bloc itf-head oh">
         <mark class="newspaperhead">Pick a Genre</mark>
+        <div class="itf-btn itf-close"><i class="fa fa-times"></i></div>
     </header>
     <content id="content_test" class="bloc p6 itf-text">
         <div class="popup_content">
@@ -278,6 +279,7 @@
 <section id="makefilm_pegi_popup" class="interface ignore center bounceInDown animated noClose">
     <header class="bloc itf-head oh">
         <mark class="newspaperhead">Pick a Genre</mark>
+        <div class="itf-btn itf-close"><i class="fa fa-times"></i></div>
     </header>
     <content id="content_test" class="bloc p6 itf-text">
         <div class="popup_content">
@@ -331,8 +333,7 @@
             <div class="Active">
                 <br>
                 <div class="btn-group" data-toggle="buttons">
-                    <ol id="selectable">
-                        <li class="ui-widget-content quality" value="0">Black & White ( Free )</li>
+                    <ol id="selectableQualities" class="selectable">
                         <li class="ui-widget-content quality" value="1">Colored ( 100$ )</li>
                         <li class="ui-widget-content quality" value="2">360p ( 300$ ) </li>
                         <li class="ui-widget-content quality" value="3">720p ( 900$ )</li>
@@ -347,7 +348,7 @@
                 <h1 class="big" id="film_cost"><strong>Cost: 0$</strong></h1>
                 <br>
                 <div style="display: flex;">
-                    <button class="bloc submit back red" id="pick_back_step2_next" ><i class="fa fa-reply" aria-hidden="true"></i>  Back</button>
+                    <button class="bloc submit back red" id="pick_step2_back" ><i class="fa fa-reply" aria-hidden="true"></i>  Back</button>
                     <button class="bloc submit next" id="pick_step2_next" >Next  <i class="fa fa-play" aria-hidden="true"></i></button>
                 </div>
             </div>
@@ -355,6 +356,31 @@
     </content>
 </section>
 
+<section id="makefilm_step3_popup" class="interface middle bounceInDown animated noClose">
+    <header class="bloc itf-head oh">
+        <mark class="newspaperhead">Create a Movie - Pick a quality</mark>
+        <div class="itf-btn itf-close"><i class="fa fa-times"></i></div>
+    </header>
+    <content class="bloc p6 itf-text">
+        <div class="popup_content">
+            <div class="Active">
+                <br>
+                <div class="btn-group" data-toggle="buttons">
+                    <ol id="selectableActors" class="selectable">
+
+                    </ol>
+                </div>
+                <br>
+                <h1 class="big" id="film_cost_step3"><strong>Cost: 0$</strong></h1>
+                <br>
+                <div style="display: flex;">
+                    <button class="bloc submit back red" id="pick_step3_back" ><i class="fa fa-reply" aria-hidden="true"></i>  Back</button>
+                    <button class="bloc submit next" id="pick_step3_next" >Next  <i class="fa fa-play" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </div>
+    </content>
+</section>
 
 <footer id="footer-navigation" class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container-fluid container-footer">

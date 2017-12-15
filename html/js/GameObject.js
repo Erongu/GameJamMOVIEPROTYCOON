@@ -11,6 +11,10 @@ var GameObject = {
 		genre: "",
 		public: "",
 		published: false,
-		cost: 0
+		quality:{}
 	}
 };
+
+function filmPrice() {
+	return GameObject.currentFilm.quality.price;
+}
