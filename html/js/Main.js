@@ -75,10 +75,53 @@ function LoadGame() {
 
     setInterval(function(){
         if(IsGameStarted) {
+
+            if(filmInProgress()) {
+                $("#lastGame_stats").show();
+            }else{
+                $("#lastGame_stats").hide();
+            }
+
             GameObject.date = GameObject.date.addDays(1); // Time...
+
             $("#info_date").text(formatDate(GameObject.date));
+
+            if(filmInProgress()) {
+                $("#currentMovie_enddate").text(30 - GameObject.publishedMovie.dayPassed);
+
+                $("#lastGame_stats").show();
+
+                var random = getRandomInt(1.15, 1.35);
+
+                GameObject.publishedMovie.entries += GameObject.publishedMovie.today_entries_average;
+                GameObject.publishedMovie.today_entries_average = parseInt(GameObject.publishedMovie.today_entries_average / random);
+                GameObject.publishedMovie.profit_day = parseInt(GameObject.publishedMovie.profit_day / 1.25);
+                GameObject.publishedMovie.dayPassed++;
+
+                GameObject.money += GameObject.publishedMovie.profit_day;
+
+                $("#currentMovie_todayEntries").text(GameObject.publishedMovie.today_entries_average);
+                $("#currentMovie_entries").text(GameObject.publishedMovie.entries);
+                $("#currentMovie_profit_per_day").text(GameObject.publishedMovie.profit_day + "$");
+
+                if(GameObject.publishedMovie.profit_day < 1){
+                    GameObject.publishedMovie = {};
+                }
+
+                if(GameObject.publishedMovie.dayPassed > 20){
+                    GameObject.publishedMovie = {};
+                }
+            }
+
+            if(GameObject.money == NaN){
+                GameObject.money = 0;
+            }
+
+            console.log(GameObject.money);
+            $("#info_money").text(GameObject.money +"$");
+
         }
-    }, 1000);
+    }, 5000);
 
     IsGameStarted = true;
 
@@ -343,6 +386,50 @@ function getActor(id) {
     return result;
 }
 
+function getTopicByName(name) {
+    let result = -1;
+
+    Topics.forEach(function (elem) {
+        if(elem.name == name){
+            result = elem;
+            return;
+        }
+    });
+    return result;
+}
+
+function getGenreByName(name) {
+    let result = -1;
+
+    Genre.forEach(function (elem) {
+        if(elem.name == name){
+            result = elem;
+            return;
+        }
+    });
+    return result;
+}
+
+function getScoreSymbioseByGenre(topic, id) {
+    let result = -1;
+
+    topic.symbiose.forEach(function (elem) {
+        if(elem.type_id == id){
+            result = elem;
+            return;
+        }
+    });
+    return result;
+}
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 function updatePrice() {
     $(".film_cost").text("Cost: " + numberWithSpaces(filmPrice()) + "$");
+}
+
+function filmInProgress() {
+    return GameObject.publishedMovie != null && GameObject.publishedMovie != {} && GameObject.publishedMovie.published == true;
 }

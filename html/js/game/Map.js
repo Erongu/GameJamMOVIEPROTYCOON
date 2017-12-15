@@ -234,6 +234,9 @@ var Map = {
                 newTile.on('click', function () {
                     switch($(this).attr('id')){
                         case "object_0":
+                            if(filmInProgress()){
+                                return;
+                            }
                             $("#makefilm_popup").show();
                             GameObject.currentFilm = {};
                             playCustomSound("whoosh");

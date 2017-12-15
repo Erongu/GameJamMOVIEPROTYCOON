@@ -41,6 +41,7 @@ $(function () {
         GameObject.company_name = companyName;
         GameObject.lose = false;
         GameObject.date = new Date(1891, 4, 11, 9, 30, 0, 0);
+        GameObject.money = 0;
 
         Cookies.set("game", GameObject);
 
@@ -244,15 +245,17 @@ $(function () {
     });
 
     $("#pick_step5_next").on('click', function () {
-        $("#makefilm_step5_popup").hide();
-
         GameObject.currentFilm.stats.image = $("#image_slider").val();
         GameObject.currentFilm.stats.script = $("#script_slider").val();
         GameObject.currentFilm.stats.sound = $("#sound_slider").val();
 
-        updatePrice();
-
-        openDialog_data(Dialogs[1]);
+        if(filmPrice() <= GameObject.money){
+            GameObject.money -= filmPrice();
+            updatePrice();
+            $("#makefilm_step5_popup").hide();
+            openDialog_data(Dialogs[1]);
+            Publish_Movie();
+        }
     });
 
     $("#image_slider").on('input', function () {

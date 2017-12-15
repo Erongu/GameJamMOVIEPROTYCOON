@@ -5,6 +5,7 @@ var Actors = [
 		gfx_id: 0,
 		age: 54,
 		price: 0,
+		score: 10,
 		speciality:3
 	},
 	{ // Actor 1
@@ -13,6 +14,7 @@ var Actors = [
 		gfx_id: 1,
 		age: 28,
         price: 100,
+		score: 15,
 		speciality:0
 	},
 	{ // Actor 2
@@ -21,6 +23,7 @@ var Actors = [
 		gfx_id: 2,
 		age: 38,
         price: 1000,
+		score: 20,
 		speciality:2
 	},
 	{ // Actor 3
@@ -29,6 +32,7 @@ var Actors = [
 		gfx_id: 3,
 		age: 27,
         price: 5000,
+		score: 25,
 		speciality:1
 	},
 	{ // Actor 4
@@ -37,6 +41,7 @@ var Actors = [
 		gfx_id: 4,
 		age: 50,
         price: 10000,
+		score: 30,
 		speciality:4
 	}
 ];

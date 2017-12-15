@@ -600,10 +600,10 @@ small{
 
 .lastGame_stats{
     top:80px;
-    display: block;
+    display: none;
     position: absolute;
     right: 10px;
-    height: 100px;
+    height: 205px;
     width: 250px;
     background: rgba(0, 0, 0, 0.38);
 }
