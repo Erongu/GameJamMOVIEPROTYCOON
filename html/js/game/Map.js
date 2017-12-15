@@ -235,6 +235,7 @@ var Map = {
                     switch($(this).attr('id')){
                         case "object_0":
                             if(filmInProgress()){
+                                openDialog_data(Dialogs[2]);
                                 return;
                             }
                             $("#makefilm_popup").show();
