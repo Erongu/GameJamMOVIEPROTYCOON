@@ -11,10 +11,27 @@ var GameObject = {
 		genre: "",
 		public: "",
 		published: false,
-		quality:{}
+		quality:{},
+		actors:[],
+		stats:{
+            special_effect: 0,
+            dialog: 0,
+            dubbling: 0,
+            image: 0,
+            sound: 0,
+            script: 0
+		}
 	}
 };
 
 function filmPrice() {
-	return GameObject.currentFilm.quality.price;
+	let priceActors = 0;
+
+	if(GameObject.currentFilm.actors != null) {
+        GameObject.currentFilm.actors.forEach(function (actor) {
+            priceActors += actor.price;
+        })
+    }
+
+	return GameObject.currentFilm.quality.price + priceActors;
 }

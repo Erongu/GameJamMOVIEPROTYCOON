@@ -22,14 +22,14 @@ $(function () {
         resizeTimer = setTimeout(adjust, 100);
     });
 
+
     $("#selectableQualities").selectable({
         selected: function(event, ui) {
             $(ui.selected).addClass("ui-selected").siblings().removeClass("ui-selected");
         }
     });
 
-    $("#selectableActors").selectable();
-
+    loadActors();
     loadSound();
 
     setInterval(function(){
@@ -50,6 +50,7 @@ function LoadGame() {
 
     GameObject.date = new Date(GameObject.date);
     GameObject.isNewGame = GameObject.money == 0;
+    GameObject.currentFilm = {};
 
     $('.interface').each(function () {
         if(!$(this).hasClass("noClose")) {
@@ -82,14 +83,6 @@ function LoadGame() {
     IsGameStarted = true;
 
     $("body").css("background", "rgb(222, 208, 156)");
-
-    //Load Actors
-
-    $("#selectableActors").html("");
-    Actors.forEach(function (actor) {
-        $("#selectableActors").append("<li class=\"ui-widget-content quality\" value=\"" + actor.uid + "\">" + actor.name + "<small class='age'> Age: " + actor.age + " Price: " + actor.price +"$</small></li>");
-    })
-
 
     Map.showGrid();
     Map.createMap();
@@ -233,6 +226,11 @@ function getTilePath(gfx_id) {
     return 'assets/tiles/' + gfx_id + '.png';
 }
 
+function getActorPath(gfx_id) {
+    return 'assets/actors/' + gfx_id + '.png';
+}
+
+
 function getPlayerPath() {
     return 'assets/player/idle_static.png';
 }
@@ -257,6 +255,7 @@ function openDialog_data(dialog) {
 
     let body = dialog.body.replace("{PLAYER_NAME}", "<strong>" + GameObject.player_name + "</strong>");
     body = body.replace("{COMPANY_NAME}", "<strong>" + GameObject.company_name + "</strong>");
+    body = body.replace("{FILM_NAME}", "<strong>" + GameObject.currentFilm.name + "</strong>");
 
     $("#dialog_title").html(title);
     $("#dialog_text").html(body);
@@ -269,17 +268,6 @@ function openMenuMakeFilm() {
 
 }
 
-function getQuality(id) {
-    let result = -1;
-
-    Qualities.forEach(function (elem) {
-        if(elem.id == id){
-            result = elem;
-            return;
-        }
-    });
-    return result;
-}
 
 function numberWithSpaces(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
@@ -293,4 +281,68 @@ function isNullOrEmpty(e) {
         return true;
     }
     return false;
+}
+
+function loadActors() {
+    //Load Actors
+
+    $("#selectableActors").html("");
+
+    Actors.forEach(function (actor) {
+        let speciality = getTopic(actor.speciality);
+        let nameTemp = "Airplane";
+
+        $("#selectableActors").append("<li class=\"ui-widget-content actors fadeIn animated \" value=\"" + actor.uid + "\">" +
+            "<img class='actorImg' src='"+ getActorPath(actor.gfx_id) +"' width='22' height='28'>" +
+            "<div class='actor'>" + actor.name + "</div>" +
+            "<small class='age'>Age: " + actor.age + "</small>" +
+            "<small class='specialities'>Speciality: " + nameTemp + "</small>" +
+            "<small class='price'>Price: " + actor.price + "$</small>"
+            + "</li>");
+    })
+
+    $("#selectableActors").selectable({filter: "li"});
+}
+
+
+
+function getQuality(id) {
+    let result = -1;
+
+    Qualities.forEach(function (elem) {
+        if(elem.id == id){
+            result = elem;
+            return;
+        }
+    });
+    return result;
+}
+
+
+function getTopic(id) {
+    let result = -1;
+
+    Topics.forEach(function (elem) {
+        if(elem.uid == id){
+            result = elem;
+            return;
+        }
+    });
+    return result;
+}
+
+function getActor(id) {
+    let result = -1;
+
+    Actors.forEach(function (elem) {
+        if(elem.uid == id){
+            result = elem;
+            return;
+        }
+    });
+    return result;
+}
+
+function updatePrice() {
+    $(".film_cost").text("Cost: " + numberWithSpaces(filmPrice()) + "$");
 }

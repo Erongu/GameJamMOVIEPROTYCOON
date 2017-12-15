@@ -338,6 +338,7 @@
                 <br>
                 <div class="btn-group" data-toggle="buttons">
                     <ol id="selectableQualities" class="selectable">
+                        <li class="ui-widget-content quality" value="0">Black & White ( Free )</li>
                         <li class="ui-widget-content quality" value="1">Colored ( 100$ )</li>
                         <li class="ui-widget-content quality" value="2">360p ( 300$ ) </li>
                         <li class="ui-widget-content quality" value="3">720p ( 900$ )</li>
@@ -349,7 +350,7 @@
 
                 </div>
                 <br>
-                <h1 class="big" id="film_cost"><strong>Cost: 0$</strong></h1>
+                <h1 class="big film_cost" ><strong>Cost: 0$</strong></h1>
                 <br>
                 <div style="display: flex;">
                     <button class="bloc submit back red" id="pick_step2_back" ><i class="fa fa-reply" aria-hidden="true"></i>  Back</button>
@@ -360,9 +361,9 @@
     </content>
 </section>
 
-<section id="makefilm_step3_popup" class="interface middle bounceInDown animated noClose">
+<section id="makefilm_step3_popup" class="interface ignore center bounceInDown animated noClose">
     <header class="bloc itf-head oh">
-        <mark class="newspaperhead">Create a Movie - Pick a quality</mark>
+        <mark class="newspaperhead">Create a Movie - Pick some actors</mark>
         <div class="itf-btn itf-close"><i class="fa fa-times"></i></div>
     </header>
     <content class="bloc p6 itf-text">
@@ -370,16 +371,79 @@
             <div class="Active">
                 <br>
                 <div class="btn-group" data-toggle="buttons">
-                    <ol id="selectableActors" class="selectable">
+                    <ol id="selectableActors">
 
                     </ol>
                 </div>
                 <br>
-                <h1 class="big" id="film_cost_step3"><strong>Cost: 0$</strong></h1>
+                <h1 class="big film_cost"><strong>Cost: 0$</strong></h1>
                 <br>
                 <div style="display: flex;">
                     <button class="bloc submit back red" id="pick_step3_back" ><i class="fa fa-reply" aria-hidden="true"></i>  Back</button>
                     <button class="bloc submit next" id="pick_step3_next" >Next  <i class="fa fa-play" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </div>
+    </content>
+</section>
+
+
+<section id="makefilm_step4_popup" class="interface ignore center bounceInDown animated noClose">
+    <header class="bloc itf-head oh">
+        <mark class="newspaperhead">Create a Movie - Customize</mark>
+        <div class="itf-btn itf-close"><i class="fa fa-times"></i></div>
+    </header>
+    <content class="bloc p6 itf-text">
+        <div class="popup_content">
+            <div class="Active">
+                <br>
+                <div id="special_effects" class="slider">
+                    <label>Special Effects: <strong id="special_effects_value">50</strong><input  id="special_effects_slider" type="range" min="0" value="50" max="100" step="1" class="input">
+                    </label>
+                </div>
+                <div id="dialog" class="slider">
+                    <label>Dialogs: <strong id="dialog_value">50</strong><input id="dialog_slider" type="range" min="0" max="100" value="50" step="1" class="input">
+                    </label>
+                </div>
+                <div id="dubbing" class="slider">
+                    <label>Dubbing: <strong id="dubbing_value">50</strong><input id="dubbing_slider" type="range" min="0" max="100" value="50" step="1" class="input">
+                    </label>
+                </div>
+                <br>
+                <div style="display: flex;">
+                    <button class="bloc submit back red" id="pick_step4_back" ><i class="fa fa-reply" aria-hidden="true"></i>  Back</button>
+                    <button class="bloc submit next" id="pick_step4_next" >Next  <i class="fa fa-play" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </div>
+    </content>
+</section>
+
+<section id="makefilm_step5_popup" class="interface ignore center bounceInDown animated noClose">
+    <header class="bloc itf-head oh">
+        <mark class="newspaperhead">Create a Movie - Customize 2</mark>
+        <div class="itf-btn itf-close"><i class="fa fa-times"></i></div>
+    </header>
+    <content class="bloc p6 itf-text">
+        <div class="popup_content">
+            <div class="Active">
+                <br>
+                <div id="image" class="slider">
+                    <label>Image: <strong id="image_value">50</strong><input  id="image_slider" type="range" min="0" value="50" max="100" step="1" class="input">
+                    </label>
+                </div>
+                <div id="script" class="slider">
+                    <label>Script: <strong id="script_value">50</strong><input id="script_slider" type="range" min="0" max="100" value="50" step="1" class="input">
+                    </label>
+                </div>
+                <div id="sound" class="slider">
+                    <label>Sound: <strong id="sound_value">50</strong><input id="sound_slider" type="range" min="0" max="100" value="50" step="1" class="input">
+                    </label>
+                </div>
+                <br>
+                <div style="display: flex;">
+                    <button class="bloc submit back red" id="pick_step5_back" ><i class="fa fa-reply" aria-hidden="true"></i>  Back</button>
+                    <button class="bloc submit next" id="pick_step5_next" >Publier  <i class="fa fa-play" aria-hidden="true"></i></button>
                 </div>
             </div>
         </div>
