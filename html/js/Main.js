@@ -180,8 +180,9 @@ function loadSound () {
     createjs.Sound.on("fileload", this.playSound, this);
 
     createjs.Sound.registerSound("music/effects/whoosh.mp3", "whoosh");
-    createjs.Sound.registerSound("music/dialogs/dialog.mp3", "dialog");
 
+    createjs.Sound.registerSound("music/dialogs/dialog.mp3", "dialog");
+    createjs.Sound.registerSound("music/dialogs/super.mp3", "super");
 }
 
 function playSound(event) {
@@ -241,15 +242,21 @@ function openDialog(title, text) {
 }
 
 function openDialog_data(dialog) {
-    $("#dialog_title").html(dialog.title);
-    $("#dialog_text").html(dialog.body);
+    let title = dialog.title.replace("{PLAYER_NAME}", "<strong>" + GameObject.player_name + "</strong>");
+    title = title.replace("{COMPANY_NAME}", "<strong>" + GameObject.company_name + "</strong>");
+
+    let body = dialog.body.replace("{PLAYER_NAME}", "<strong>" + GameObject.player_name + "</strong>");
+    body = body.replace("{COMPANY_NAME}", "<strong>" + GameObject.company_name + "</strong>");
+
+    $("#dialog_title").html(title);
+    $("#dialog_text").html(body);
     $("#dialog_popup").show();
 
     playDialog("dialog");
 }
 
 function openMenuMakeFilm() {
-    
+
 }
 
 function getQuality(id) {

@@ -235,6 +235,8 @@ var Map = {
                     switch($(this).attr('id')){
                         case "object_0":
                             $("#makefilm_popup").show();
+                            playCustomSound("whoosh");
+                            //playDialog("super");
                             _this.removeObject(1);
                             break;
                     }

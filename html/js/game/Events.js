@@ -58,6 +58,7 @@ $(function () {
 
     $("#skip_dialog").on('click', function () {
         playCustomSound("whoosh");
+        playDialog("super");
 
         $("#dialog_popup").addClass("bounceOutDown animated").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
             $(this).removeClass("bounceOutDown");
