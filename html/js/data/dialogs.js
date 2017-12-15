@@ -18,4 +18,4 @@ var Dialogs = [
 		body: "Your {FILM_NAME} as just been published"
 			"Wait at least 3 days before the first reviews for your movie"
 	},
-];
+]
